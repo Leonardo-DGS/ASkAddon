@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+  <title>ASkAddon Documentation</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="global-navigation">
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="conditions.html">Conditions</a>
+  <a href="effects.html">Effects</a>
+  <a href="expressions.html">Expressions</a>
+  <a href="classes.html">Types</a>
+</div>
+
+  <nav>
+    <p id="nav-title">Table of Contents</p>
+    <div id="nav-contents">
+<p><a href="#StringStartsWith">String Starts With</a></p>
+<p><a href="#StringEndsWith">String Ends With</a></p>
+<p><a href="#PlayerHasPotionEffect">Player Has Potion Effect</a></p>
+<p><a href="#FileExists">File Exists</a></p>
+<p><a href="#ExistsObjectInRam">Exists Object In Ram</a></p>
+
+    </div>
+  </nav>
+  <div id="content">
+    <h1>Conditions</h1>
+
+
+    <div id="StringStartsWith" class="item-title">String Starts With</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">%string% start[s][ with] %string%</span></li>
+              <li><span class="skript-code-inline">%string% (doesn't|don't|not) start[s][ with] %string%</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Check if a string starts with another string.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">player's name starts with &quot;example string&quot;<br />player's name doesn't starts with &quot;example string&quot;</div>
+      </div>
+    </div>
+
+    <div id="StringEndsWith" class="item-title">String Ends With</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">%string% end[s][ with] %string%</span></li>
+              <li><span class="skript-code-inline">%string% (doesn't|don't|not) start[s][ with] %string%</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Check if a string ends with another string.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">player's name starts with &quot;example text&quot;<br />player's name doesn't starts with &quot;example text&quot;</div>
+      </div>
+    </div>
+
+    <div id="PlayerHasPotionEffect" class="item-title">Player Has Potion Effect</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">[player] %player% has [potion] effect [type] [of] %potioneffecttype%</span></li>
+              <li><span class="skript-code-inline">[player] %player% has(n't| not) [potion] effect [type] [of] %potioneffecttype%</span></li>
+              <li><span class="skript-code-inline"></span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Check if a player has the potion effect specified.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">player has potion effect type night vision<br />player hasn't potion effect type night vision</div>
+      </div>
+    </div>
+
+    <div id="FileExists" class="item-title">File Exists</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">file %string% exist[s]</span></li>
+              <li><span class="skript-code-inline">file %string% (not|doesn't|don't) exist[s]</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Check whether a file exists or not.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">file &quot;examplefile.txt&quot; exists<br />file &quot;examplefile.txt&quot; doesn't exists</div>
+      </div>
+    </div>
+
+    <div id="ExistsObjectInRam" class="item-title">Exists Object In Ram</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">exists object [with name] %string% [saved] in ram</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.1.6</td>
+        </tr>
+      </table>
+      <div class="item-description">Check if exists an object, with specified name, previously saved in ram by the effect wich does that.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">exists object with name &quot;exampleobjectname&quot; in ram</div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- other things are inserted here -->
+</body>
+</html>

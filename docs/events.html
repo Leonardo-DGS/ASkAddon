@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+  <title>ASkAddon Documentation</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="global-navigation">
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="conditions.html">Conditions</a>
+  <a href="effects.html">Effects</a>
+  <a href="expressions.html">Expressions</a>
+  <a href="classes.html">Types</a>
+</div>
+
+  <nav>
+    <p id="nav-title">Table of Contents</p>
+    <div id="nav-contents">
+<p><a href="#PlayerChangeWorld">Player Change World</a></p>
+<p><a href="#PlayerChangeMainHand">Player Change Main Hand</a></p>
+<p><a href="#PlayerSwapHandItems">Player Swap Hand Items</a></p>
+<p><a href="#PlayerChatTabComplete">Player Chat Tab Complete</a></p>
+<p><a href="#PlayerEditBook">Player Edit Book</a></p>
+<p><a href="#PlayerShearEntity">Player Shear Entity</a></p>
+<p><a href="#PlayerChangeVelocity">Player Change Velocity</a></p>
+<p><a href="#PlayerArmorStandManipulate">Player Armor Stand Manipulate</a></p>
+
+    </div>
+  </nav>
+  <div id="content">
+    <h1>Triggers</h1>
+
+
+    <div id="PlayerChangeWorld" class="item-title">Player Change World</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player change[d] world</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player goes in another world.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player change world<br />on player changed world</div>
+      </div>
+    </div>
+
+    <div id="PlayerChangeMainHand" class="item-title">Player Change Main Hand</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player change[d] main hand</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player changes their main hand in the client settings.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player change main hand<br />on player changed main hand</div>
+      </div>
+    </div>
+
+    <div id="PlayerSwapHandItems" class="item-title">Player Swap Hand Items</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player swap hand [items]</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player swap items between main hand and off hand using the hotkey.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player swap hand<br />on player swap hand items</div>
+      </div>
+    </div>
+
+    <div id="PlayerChatTabComplete" class="item-title">Player Chat Tab Complete</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player [chat] tab complete</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player attempts to tab-complete a chat message.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">player tab complete<br />player chat tab complete</div>
+      </div>
+    </div>
+
+    <div id="PlayerEditBook" class="item-title">Player Edit Book</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">[player] (edit book|book edit)</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player edits or signs a book and quill item. If the event is cancelled, no changes are made to the BookMeta.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player edit book<br />on player book edit<br />on book edit<br />on edit book</div>
+      </div>
+    </div>
+
+    <div id="PlayerShearEntity" class="item-title">Player Shear Entity</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player shear entity</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player shears an entity.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player shear entity</div>
+      </div>
+    </div>
+
+    <div id="PlayerChangeVelocity" class="item-title">Player Change Velocity</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player [change] velocity</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when the velocity of a player changes.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">player velocity<br />player change velocity</div>
+      </div>
+    </div>
+
+    <div id="PlayerArmorStandManipulate" class="item-title">Player Armor Stand Manipulate</div>
+    <div class="item-content">
+      <table>
+        <tr>
+          <td class="item-table-label">Pattern:</td>
+          <td>
+            <ul>
+              <li><span class="skript-code-inline">player armor stand manipulate</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="item-table-label">Since:</td>
+          <td>1.0</td>
+        </tr>
+      </table>
+      <div class="item-description">Called when a player interacts with an armor stand and will either swap, retrieve or place an item.</div>
+      <div class="item-examples">
+        Examples:
+        <div class="skript-code-block">on player armor stand manipulate</div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- other things are inserted here -->
+</body>
+</html>

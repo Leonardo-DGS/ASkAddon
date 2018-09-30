@@ -8,6 +8,7 @@ targetCompatibility = 1.8
 repositories {
     jcenter()
     mavenCentral()
+    
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
     maven { url = 'http://repo.extendedclip.com/content/repositories/placeholderapi/' }
     maven { url = 'https://repo.destroystokyo.com/repository/maven-public/' }

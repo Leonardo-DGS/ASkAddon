@@ -1,7 +1,7 @@
 name: ASkAddon
 main: net.leomixer17.askaddon.ASkAddon
 description: An addon for Skript
-version: 1.1.8
+version: @version@
 depend: [Skript]
 softdepend: [PlaceholderAPI]
 author: Leomixer17

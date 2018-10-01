@@ -1,6 +1,9 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
 apply plugin: 'java'
 
 group = 'net.leomixer17'
+version = '1.1.8'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -23,4 +26,14 @@ dependencies {
     implementation 'com.github.SkriptLang:Skript:dev37c'
     implementation 'me.clip:placeholderapi:2.9.2'
     compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version:'1.1.0'
+}
+
+processResources {
+    filter ReplaceTokens, tokens: [
+            "version" : System.getenv('ASKADDON_VERSION') == null ? project.property("version") : System.getenv('ASKADDON_VERSION')
+    ]
+}
+
+jar {
+    archiveName System.getenv('ASKADDON_JAR_NAME') == null ? 'ASkAddon.jar' : System.getenv("ASKADDON_JAR_NAME")
 }

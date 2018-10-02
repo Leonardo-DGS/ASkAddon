@@ -1,10 +1,14 @@
 # ASkAddon
 An addon for Skript plugin for Bukkit/Spigot
+
 ## Documentation
 Click [here](https://leomixer17.github.io/ASkAddon/) for the documentation of ASkAddon.
 
 ## Report Issues
 You should report issues on Github, for do this there is the [issue tracker](https://github.com/Leomixer17/ASkAddon/issues) for bugs, feature requests and such.
+
+## Dev Builds
+You can get latest builds [here](https://ci.codemc.org/job/Leomixer17/job/ASkAddon/)
 
 ## Contributing
 If you want to contribute to this project you can:

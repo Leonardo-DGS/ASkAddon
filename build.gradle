@@ -3,7 +3,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 apply plugin: 'java'
 
 group = 'net.leomixer17'
-version = '1.1.8'
+version = '1.2.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
     implementation 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
-    implementation 'com.github.SkriptLang:Skript:dev37c'
+    compileOnly ('com.github.SkriptLang:Skript:dev37c')
     implementation 'me.clip:placeholderapi:2.9.2'
     compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version:'1.1.0'
 }

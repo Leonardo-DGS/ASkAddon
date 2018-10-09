@@ -27,8 +27,8 @@ public class EffSendTitle extends Effect {
 		this.Title = (Expression<String>) exprs[0];
 		this.subTitle = (Expression<String>) exprs[1];
 		this.time = (Expression<Timespan>) exprs[2];
-	    this.fadeIn = (Expression<Timespan>) exprs[3];
-	    this.fadeOut = (Expression<Timespan>) exprs[4];
+		this.fadeIn = (Expression<Timespan>) exprs[3];
+		this.fadeOut = (Expression<Timespan>) exprs[4];
 		this.Player = (Expression<Player>) exprs[5];
 		return true;
 	}
@@ -47,17 +47,18 @@ public class EffSendTitle extends Effect {
 		int fadeOutTicks = 5;
 		if (this.time != null)
 			timeTicks = (int) this.time.getSingle(event).getTicks_i();
-		if(this.fadeIn != null)
+		if (this.fadeIn != null)
 			fadeInTicks = (int) this.fadeIn.getSingle(event).getTicks_i();
-		if(this.fadeOut != null)
+		if (this.fadeOut != null)
 			fadeOutTicks = (int) this.fadeOut.getSingle(event).getTicks_i();
 		
-		for (final Player p : this.Player.getAll(event)) {
-			if(this.Title != null && this.subTitle != null)
+		for (final Player p : this.Player.getAll(event))
+		{
+			if (this.Title != null && this.subTitle != null)
 				TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), this.subTitle.getSingle(event));
-			else if(this.Title != null)
+			else if (this.Title != null)
 				TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), null);
-			else if(this.subTitle != null)
+			else if (this.subTitle != null)
 				TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, null, this.subTitle.getSingle(event));
 		}
 	}

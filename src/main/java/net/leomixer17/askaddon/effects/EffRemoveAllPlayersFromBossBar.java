@@ -21,11 +21,11 @@ public class EffRemoveAllPlayersFromBossBar extends Effect implements Listener {
 	{
 		return "Remove all Players from Boss Bar";
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
 	{
-		this.bar = (Expression < BossBar > ) exprs[0];
+		this.bar = (Expression<BossBar>) exprs[0];
 		return true;
 	}
 	

@@ -1,8 +1,5 @@
 package net.leomixer17.askaddon.utils;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-
 import ch.njol.skript.classes.ClassInfo;
 import ch.njol.skript.classes.EnumSerializer;
 import ch.njol.skript.classes.Parser;
@@ -10,14 +7,17 @@ import ch.njol.skript.expressions.base.EventValueExpression;
 import ch.njol.skript.lang.ParseContext;
 import ch.njol.skript.registrations.Classes;
 
-public class EnumClassInfo <E extends Enum<E>> {
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+public class EnumClassInfo<E extends Enum<E>> {
 	
 	private final Class<E> enumType;
 	private final String codeName;
 	@SuppressWarnings("rawtypes")
 	private final EventValueExpression defaultExpression;
 	private final ClassInfo<E> classInfo;
-	private final HashMap <String, String> synonyms = new HashMap<String, String>();
+	private final HashMap<String, String> synonyms = new HashMap<String, String>();
 	
 	@SuppressWarnings({"unchecked", "rawtypes"})
 	private EnumClassInfo(Class<E> enumType, String codeName)
@@ -38,13 +38,13 @@ public class EnumClassInfo <E extends Enum<E>> {
 	}
 	
 	@SuppressWarnings({"unchecked", "rawtypes"})
-	public static <E extends Enum <E>> EnumClassInfo <E> create(Class<E> enumType, String codeName)
+	public static <E extends Enum<E>> EnumClassInfo<E> create(Class<E> enumType, String codeName)
 	{
 		return new EnumClassInfo(enumType, codeName);
 	}
 	
 	@SuppressWarnings({"unchecked", "rawtypes"})
-	public static <E extends Enum<E>> EnumClassInfo<E> create(Class <E> enumType, String codeName, EventValueExpression<E> defaultExpression)
+	public static <E extends Enum<E>> EnumClassInfo<E> create(Class<E> enumType, String codeName, EventValueExpression<E> defaultExpression)
 	{
 		return new EnumClassInfo(enumType, codeName, defaultExpression);
 	}
@@ -70,21 +70,25 @@ public class EnumClassInfo <E extends Enum<E>> {
 	@SuppressWarnings({"unchecked", "rawtypes"})
 	public void register()
 	{
-		Classes.registerClass(this.classInfo.user(new String[] {
-			this.codeName + "s?"
-		}).parser(new Parser()
-		{
+		Classes.registerClass(this.classInfo.user(new String[]{
+				this.codeName + "s?"
+		}).parser(new Parser() {
 			public E parse(String s, ParseContext parseContext)
 			{
-				if (s.startsWith(EnumClassInfo.this.codeName + ":")) {
+				if (s.startsWith(EnumClassInfo.this.codeName + ":"))
+				{
 					s = s.substring(EnumClassInfo.this.codeName.length() + 1, s.length());
 				}
-				try {
-					for (Entry p: EnumClassInfo.this.synonyms.entrySet())
+				try
+				{
+					for (Entry p : EnumClassInfo.this.synonyms.entrySet())
 						if (s.matches((String) p.getKey()))
 							return Enum.valueOf(EnumClassInfo.this.enumType, (String) p.getValue());
 					return Enum.valueOf(EnumClassInfo.this.enumType, s.replace(" ", "_").toUpperCase().trim());
-				} catch(IllegalArgumentException e) {}
+				}
+				catch (IllegalArgumentException e)
+				{
+				}
 				return null;
 			}
 			

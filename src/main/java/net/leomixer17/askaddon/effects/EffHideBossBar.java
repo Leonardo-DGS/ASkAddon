@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 
 public class EffHideBossBar extends Effect implements Listener {
 	
-	private Expression < BossBar > bar;
+	private Expression<BossBar> bar;
 	
 	protected void execute(Event event)
 	{

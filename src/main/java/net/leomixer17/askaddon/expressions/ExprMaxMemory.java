@@ -12,9 +12,9 @@ public class ExprMaxMemory extends SimpleExpression<Integer> {
 	{
 		long l = Runtime.getRuntime().maxMemory();
 		int i = 0;
-		if (! (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE)) i = (int) l;
-		return new Integer[] {
-			i
+		if (!(l < Integer.MIN_VALUE || l > Integer.MAX_VALUE)) i = (int) l;
+		return new Integer[]{
+				i
 		};
 	}
 	

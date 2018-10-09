@@ -1,13 +1,12 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 
 public class ExprPingOfPlayer extends SimpleExpression<Integer> {
 	
@@ -21,19 +20,22 @@ public class ExprPingOfPlayer extends SimpleExpression<Integer> {
 		Player p = this.player.getSingle(event);
 		if (p == null)
 			return null;
-		try {
+		try
+		{
 			Class<?> craftPlayer = Class.forName("org.bukkit.craftbukkit." + version + ".entity.CraftPlayer");
 			Object cp = craftPlayer.cast(p);
 			Object handle = craftPlayer.getMethod("getHandle").invoke(cp);
 			Integer ping = (int) handle.getClass().getField("ping").get(handle);
-			return new Integer[] {
-				ping
+			return new Integer[]{
+					ping
 			};
-		} catch(Exception e) {
+		}
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
-		return new Integer[] {
-			null
+		return new Integer[]{
+				null
 		};
 	}
 	

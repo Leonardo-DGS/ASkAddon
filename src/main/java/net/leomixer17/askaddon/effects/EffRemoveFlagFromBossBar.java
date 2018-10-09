@@ -25,10 +25,10 @@ public class EffRemoveFlagFromBossBar extends Effect implements Listener {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
 	{
-		this.bar = (Expression < BossBar > ) exprs[1];
-		this.flag = (Expression < BarFlag > ) exprs[0];
+		this.bar = (Expression<BossBar>) exprs[1];
+		this.flag = (Expression<BarFlag>) exprs[0];
 		return true;
 	}
 	

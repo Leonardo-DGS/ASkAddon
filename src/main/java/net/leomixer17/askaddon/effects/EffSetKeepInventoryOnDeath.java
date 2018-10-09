@@ -30,7 +30,7 @@ public class EffSetKeepInventoryOnDeath extends Effect {
 	@Override
 	protected void execute(Event event)
 	{
-		if(event instanceof PlayerDeathEvent)
+		if (event instanceof PlayerDeathEvent)
 			((PlayerDeathEvent) event).setKeepInventory(this.keepinv.getSingle(event));
 	}
 	

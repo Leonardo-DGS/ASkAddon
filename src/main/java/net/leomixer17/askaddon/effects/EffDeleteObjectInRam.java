@@ -18,7 +18,7 @@ public class EffDeleteObjectInRam extends Effect {
 	@Override
 	public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
 	{
-		if(i == 0)
+		if (i == 0)
 			this.s = (Expression<String>) exprs[0];
 		this.a = i;
 		return true;
@@ -33,7 +33,7 @@ public class EffDeleteObjectInRam extends Effect {
 	@Override
 	protected void execute(Event e)
 	{
-		if(this.a == 0)
+		if (this.a == 0)
 			ASkAddon.objects.remove(this.s.getSingle(e));
 		else
 			ASkAddon.objects.clear();

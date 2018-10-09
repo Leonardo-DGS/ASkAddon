@@ -1,18 +1,17 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
-import org.bukkit.Bukkit;
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import org.bukkit.Bukkit;
+import org.bukkit.event.Event;
+
+import javax.annotation.Nullable;
 
 public class ExprMaxPlayers extends SimpleExpression<Integer> {
 	
-	public Class<?extends Integer> getReturnType()
+	public Class<? extends Integer> getReturnType()
 	{
 		return Integer.class;
 	}
@@ -35,8 +34,8 @@ public class ExprMaxPlayers extends SimpleExpression<Integer> {
 	@Nullable
 	protected Integer[] get(Event event)
 	{
-		return new Integer[] {
-			Bukkit.getMaxPlayers()
+		return new Integer[]{
+				Bukkit.getMaxPlayers()
 		};
 	}
 	

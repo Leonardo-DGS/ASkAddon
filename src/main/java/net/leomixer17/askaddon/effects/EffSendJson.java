@@ -20,7 +20,7 @@ public class EffSendJson extends Effect {
 			return;
 		j.send(this.players.getAll(event));
 	}
-
+	
 	public String toString(Event event, boolean b)
 	{
 		return "json";
@@ -28,7 +28,7 @@ public class EffSendJson extends Effect {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
 	{
 		this.json = (Expression<JSONMessage>) exprs[0];
 		this.players = (Expression<Player>) exprs[1];

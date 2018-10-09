@@ -15,7 +15,7 @@ public class EffSetCursorItem extends Effect {
 	private Expression<ItemStack> item;
 	
 	@SuppressWarnings("unchecked")
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean kleenean, ParseResult parse)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parse)
 	{
 		this.item = (Expression<ItemStack>) exprs[0];
 		return true;
@@ -28,7 +28,7 @@ public class EffSetCursorItem extends Effect {
 	
 	protected void execute(Event event)
 	{
-		if (! (event instanceof InventoryClickEvent))
+		if (!(event instanceof InventoryClickEvent))
 			return;
 		final ItemStack itemTobe = this.item.getSingle(event);
 		((InventoryClickEvent) event).getCursor().setType(itemTobe.getType());

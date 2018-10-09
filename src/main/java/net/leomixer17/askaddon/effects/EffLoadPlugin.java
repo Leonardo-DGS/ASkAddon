@@ -34,9 +34,12 @@ public class EffLoadPlugin extends Effect {
 	@Override
 	protected void execute(Event e)
 	{
-		try {
+		try
+		{
 			Bukkit.getServer().getPluginManager().loadPlugin(new File("plugins" + File.separator + this.plugin.getSingle(e) + ".jar"));
-		} catch (UnknownDependencyException | InvalidPluginException | InvalidDescriptionException e1) {
+		}
+		catch (UnknownDependencyException | InvalidPluginException | InvalidDescriptionException e1)
+		{
 			e1.printStackTrace();
 		}
 	}

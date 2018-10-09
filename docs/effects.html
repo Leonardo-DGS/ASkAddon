@@ -1,587 +1,638 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
-  <title>ASkAddon Documentation</title>
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+    <title>ASkAddon Documentation</title>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div id="global-navigation">
-  <a href="index.html">Home</a>
-  <a href="events.html">Events</a>
-  <a href="conditions.html">Conditions</a>
-  <a href="effects.html">Effects</a>
-  <a href="expressions.html">Expressions</a>
-  <a href="classes.html">Types</a>
+<div id="global-navigation">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="effects.html">Effects</a>
+    <a href="expressions.html">Expressions</a>
+    <a href="classes.html">Types</a>
 </div>
 
-  <nav>
+<nav>
     <p id="nav-title">Table of Contents</p>
     <div id="nav-contents">
-<p><a href="#SendTitle">Send Title</a></p>
-<p><a href="#SetActionBar">Set Action Bar</a></p>
-<p><a href="#LoadWorld">Load World</a></p>
-<p><a href="#UnloadWorld">Unload World</a></p>
-<p><a href="#EnableDisableKeepInventory">Enable/Disable Keep Inventory</a></p>
-<p><a href="#EnableDisableKeepXP">Enable/Disable Keep XP</a></p>
-<p><a href="#SendJsonMessage">Send Json Message</a></p>
-<p><a href="#ShowBossBar">Show Boss Bar</a></p>
-<p><a href="#HideBossBar">Hide Boss Bar</a></p>
-<p><a href="#AddFlagtoBossBar">Add Flag to Boss Bar</a></p>
-<p><a href="#AddPlayertoBossBar">Add Player to Boss Bar</a></p>
-<p><a href="#RemoveAllPlayersFromBossBar">Remove All Players From Boss Bar</a></p>
-<p><a href="#RemoveFlagFromBossBar">Remove Flag From Boss Bar</a></p>
-<p><a href="#RemovePlayerFromBossBar">Remove Player From Boss Bar</a></p>
-<p><a href="#CreateFile">Create File</a></p>
-<p><a href="#DeleteFile">Delete File</a></p>
-<p><a href="#RequestGarbageCollector">Request Garbage Collector</a></p>
-<p><a href="#CreateWorld">Create World</a></p>
-<p><a href="#DeleteWorld">Delete World</a></p>
-<p><a href="#LoadChunk">Load Chunk</a></p>
-<p><a href="#UnloadChunk">Unload Chunk</a></p>
-<p><a href="#SaveObjectInRam">Save Object In Ram</a></p>
-<p><a href="#DeleteObjectInRam">Delete Object In Ram</a></p>
+        <p><a href="#SendTitle">Send Title</a></p>
+        <p><a href="#SetActionBar">Set Action Bar</a></p>
+        <p><a href="#LoadWorld">Load World</a></p>
+        <p><a href="#UnloadWorld">Unload World</a></p>
+        <p><a href="#EnableDisableKeepInventory">Enable/Disable Keep Inventory</a></p>
+        <p><a href="#EnableDisableKeepXP">Enable/Disable Keep XP</a></p>
+        <p><a href="#SendJsonMessage">Send Json Message</a></p>
+        <p><a href="#ShowBossBar">Show Boss Bar</a></p>
+        <p><a href="#HideBossBar">Hide Boss Bar</a></p>
+        <p><a href="#AddFlagtoBossBar">Add Flag to Boss Bar</a></p>
+        <p><a href="#AddPlayertoBossBar">Add Player to Boss Bar</a></p>
+        <p><a href="#RemoveAllPlayersFromBossBar">Remove All Players From Boss Bar</a></p>
+        <p><a href="#RemoveFlagFromBossBar">Remove Flag From Boss Bar</a></p>
+        <p><a href="#RemovePlayerFromBossBar">Remove Player From Boss Bar</a></p>
+        <p><a href="#CreateFile">Create File</a></p>
+        <p><a href="#DeleteFile">Delete File</a></p>
+        <p><a href="#RequestGarbageCollector">Request Garbage Collector</a></p>
+        <p><a href="#CreateWorld">Create World</a></p>
+        <p><a href="#DeleteWorld">Delete World</a></p>
+        <p><a href="#LoadChunk">Load Chunk</a></p>
+        <p><a href="#UnloadChunk">Unload Chunk</a></p>
+        <p><a href="#SaveObjectInRam">Save Object In Ram</a></p>
+        <p><a href="#DeleteObjectInRam">Delete Object In Ram</a></p>
 
     </div>
-  </nav>
-  <div id="content">
+</nav>
+<div id="content">
     <h1>Effects</h1>
 
 
     <div id="SendTitle" class="item-title">Send Title</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">send title %string% [with subtitle %string%] [for %timespan%] [with %timespan% fade in] [with %timespan% fade out] to %player%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Sends a title to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on player join:<br />send title &quot;Hello&quot; with subtitle &quot;Welcome in my awesome server!&quot; with 8 seconds fade in and 9 seconds fade out to player</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">send title %string% [with subtitle %string%] [for %timespan%] [with %timespan% fade in] [with %timespan% fade out] to %player%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Sends a title to a player.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on player join:<br/>send title &quot;Hello&quot; with subtitle &quot;Welcome
+                in my awesome server!&quot; with 8 seconds fade in and 9 seconds fade out to player
+            </div>
+        </div>
     </div>
 
     <div id="SetActionBar" class="item-title">Set Action Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">set action[ ]bar of %player% to %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Set the action bar of a player to the string supplied</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on command /actionbar:<br />set action bar of player to &quot;Wonderful action bar!&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">set action[ ]bar of %player% to %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Set the action bar of a player to the string supplied</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on command /actionbar:<br/>set action bar of player to &quot;Wonderful action
+                bar!&quot;
+            </div>
+        </div>
     </div>
 
     <div id="LoadWorld" class="item-title">Load World</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">load world %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Loads the world with name the string supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">load world &quot;Spawn&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">load world %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Loads the world with name the string supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">load world &quot;Spawn&quot;</div>
+        </div>
     </div>
 
     <div id="UnloadWorld" class="item-title">Unload World</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">unload world %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Unloads the world with name the string supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">unload world &quot;Spawn&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">unload world %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Unloads the world with name the string supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">unload world &quot;Spawn&quot;</div>
+        </div>
     </div>
 
     <div id="EnableDisableKeepInventory" class="item-title">Enable/Disable Keep Inventory</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">set keep inventory to %boolean%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Enable/Disable keep inventory for a player in death events.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on death of player:<br />set keep inventory to true</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">set keep inventory to %boolean%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Enable/Disable keep inventory for a player in death events.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on death of player:<br/>set keep inventory to true</div>
+        </div>
     </div>
 
     <div id="EnableDisableKeepXP" class="item-title">Enable/Disable Keep XP</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">set keep (xp|level) to %boolean%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Enable/Disable keep XP for a player in death events.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on death of player:<br />    if player has permission &quot;keep.xp&quot;:<br />        set keep xp to true<br />    else:<br />        set keep level to false</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">set keep (xp|level) to %boolean%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Enable/Disable keep XP for a player in death events.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on death of player:<br/> if player has permission &quot;keep.xp&quot;:<br/>
+                set keep xp to true<br/> else:<br/> set keep level to false
+            </div>
+        </div>
     </div>
 
     <div id="SendJsonMessage" class="item-title">Send Json Message</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">send %jsonmessage% to %player%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Sends a json message to a player.<br />See &quot;Json Message&quot; in page &quot;Expressions&quot; for more informations.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /jsonmessage:<br />send json of &quot;I'm a simple message&quot; tooltip &quot;I'm a tooltip&quot; suggest &quot;/examplecommand&quot; run &quot;/anothercommand&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">send %jsonmessage% to %player%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Sends a json message to a player.<br/>See &quot;Json Message&quot; in page &quot;Expressions&quot;
+            for more informations.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /jsonmessage:<br/>send json of &quot;I'm a simple message&quot;
+                tooltip &quot;I'm a tooltip&quot; suggest &quot;/examplecommand&quot; run &quot;/anothercommand&quot;
+            </div>
+        </div>
     </div>
 
     <div id="ShowBossBar" class="item-title">Show Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">show[ boss[ ]bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Shows a boss bar.<br />See &quot;New Boss Bar&quot; in page &quot;Expressions&quot; for more informations.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%<br />show {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">show[ boss[ ]bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Shows a boss bar.<br/>See &quot;New Boss Bar&quot; in page &quot;Expressions&quot;
+            for more informations.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%<br/>show {_bossbar}
+            </div>
+        </div>
     </div>
 
     <div id="HideBossBar" class="item-title">Hide Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">hide[ boss[ ]bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Hides a boss bar.<br />See &quot;New Boss Bar&quot; in page &quot;Expressions&quot; for more informations.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%<br />hide {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">hide[ boss[ ]bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Hides a boss bar.<br/>See &quot;New Boss Bar&quot; in page &quot;Expressions&quot;
+            for more informations.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%<br/>hide {_bossbar}
+            </div>
+        </div>
     </div>
 
     <div id="AddFlagtoBossBar" class="item-title">Add Flag to Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">add flag %flag% to[ boss[ ]bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Adds a flag to a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%<br />show {_bossbar}<br />add flag create fog to {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">add flag %flag% to[ boss[ ]bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Adds a flag to a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%<br/>show {_bossbar}<br/>add flag create fog to {_bossbar}
+            </div>
+        </div>
     </div>
 
     <div id="AddPlayertoBossBar" class="item-title">Add Player to Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">add player %player% to [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Adds the player specified to a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">add player %player% to [boss][ ][bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Adds the player specified to a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%
+            </div>
+        </div>
     </div>
 
     <div id="RemoveAllPlayersFromBossBar" class="item-title">Remove All Players From Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">remove all players from [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Removes all players from a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%<br />remove all players from bossbar {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">remove all players from [boss][ ][bar] %bossbar%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Removes all players from a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%<br/>remove all players from bossbar {_bossbar}
+            </div>
+        </div>
     </div>
 
     <div id="RemoveFlagFromBossBar" class="item-title">Remove Flag From Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">remove flag %flag% from [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Removes a flag from a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add flag create fog to {_bossbar}<br />remove flag create fog from bossbar {_bossbar}<br />add player player-argument to [boss][ ][bar] %bossbar%</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">remove flag %flag% from [boss][ ][bar] %bossbar%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Removes a flag from a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add flag
+                create fog to {_bossbar}<br/>remove flag create fog from bossbar {_bossbar}<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%
+            </div>
+        </div>
     </div>
 
     <div id="RemovePlayerFromBossBar" class="item-title">Remove Player From Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">remove player %player% from [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Removes a player from a bossbar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /bossbar [player]:<br />set {_bossbar} to new bossbar<br />add player player-argument to [boss][ ][bar] %bossbar%<br />remove player player-argument from [boss][ ][bar] %bossbar%</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">remove player %player% from [boss][ ][bar] %bossbar%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Removes a player from a bossbar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /bossbar [player]:<br/>set {_bossbar} to new bossbar<br/>add player
+                player-argument to [boss][ ][bar] %bossbar%<br/>remove player player-argument from [boss][ ][bar]
+                %bossbar%
+            </div>
+        </div>
     </div>
 
     <div id="CreateFile" class="item-title">Create File</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">create[ (a|the)] file %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Creates a new file with the name supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">create the file &quot;playerdata.yml&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">create[ (a|the)] file %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Creates a new file with the name supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">create the file &quot;playerdata.yml&quot;</div>
+        </div>
     </div>
 
     <div id="DeleteFile" class="item-title">Delete File</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">delete[ the] file %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Deletes the file with name supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">delete file &quot;playerdata.yml&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">delete[ the] file %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Deletes the file with name supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">delete file &quot;playerdata.yml&quot;</div>
+        </div>
     </div>
 
     <div id="RequestGarbageCollector" class="item-title">Request Garbage Collector</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">[(request|do|make) [a]] garbage collect[or]</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Request a garbage collector, for clear unused data in memory and free RAM memory.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">request a garbage collector</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">[(request|do|make) [a]] garbage collect[or]</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Request a garbage collector, for clear unused data in memory and free RAM
+            memory.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">request a garbage collector</div>
+        </div>
     </div>
 
     <div id="CreateWorld" class="item-title">Create World</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">create [a] [new] world [(with name|called|named)] %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Creates a new world if not exists with the name supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">create a new world with name &quot;PvP&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span
+                                class="skript-code-inline">create [a] [new] world [(with name|called|named)] %string%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Creates a new world if not exists with the name supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">create a new world with name &quot;PvP&quot;</div>
+        </div>
     </div>
 
     <div id="DeleteWorld" class="item-title">Delete World</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">delete [the] world [(with name|called|named)] %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Deletes the world named as the string supplied.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">delete the world named &quot;PvP&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span
+                                class="skript-code-inline">delete [the] world [(with name|called|named)] %string%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Deletes the world named as the string supplied.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">delete the world named &quot;PvP&quot;</div>
+        </div>
     </div>
 
     <div id="LoadChunk" class="item-title">Load Chunk</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">load chunk [at] %chunk%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Loads a chunk.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">loop loaded chunks of player's world:<br />    load chunk loop-chunk</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">load chunk [at] %chunk%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Loads a chunk.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">loop loaded chunks of player's world:<br/> load chunk loop-chunk</div>
+        </div>
     </div>
 
     <div id="UnloadChunk" class="item-title">Unload Chunk</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">unload chunk [at] %chunk%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Unloads a chunk.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">loop loaded chunks of player's world:<br />    unload chunk loop-chunk</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">unload chunk [at] %chunk%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Unloads a chunk.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">loop loaded chunks of player's world:<br/> unload chunk loop-chunk</div>
+        </div>
     </div>
 
     <div id="SaveObjectInRam" class="item-title">Save Object In Ram</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">save object %object% in ram [with name] %string%</span></li>
-              <li><span class="skript-code-inline">save object %object% [with name] %string% in ram</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Save any type of variable in ram (instead of save it to variables file) for use it later.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /note [&lt;text&gt;]:<br />save object in ram with name &quot;%player%.note&quot;<br />message &quot;note saved&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">save object %object% in ram [with name] %string%</span>
+                        </li>
+                        <li><span class="skript-code-inline">save object %object% [with name] %string% in ram</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Save any type of variable in ram (instead of save it to variables file) for use it
+            later.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /note [&lt;text&gt;]:<br/>save object in ram with name &quot;%player%.note&quot;<br/>message
+                &quot;note saved&quot;
+            </div>
+        </div>
     </div>
 
     <div id="DeleteObjectInRam" class="item-title">Delete Object In Ram</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">delete object [with name] %string% [saved] in ram</span></li>
-              <li><span class="skript-code-inline">delete all object[s] [saved] in ram</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Delete an object previously saved in ram or delete all objects previously saved in ram by this plugin.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">command /deletenote:<br />delete object with name &quot;%player%.note&quot; saved in ram<br />command /deleteallobjects:<br />delete all objects in ram</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">delete object [with name] %string% [saved] in ram</span>
+                        </li>
+                        <li><span class="skript-code-inline">delete all object[s] [saved] in ram</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Delete an object previously saved in ram or delete all objects previously saved in
+            ram by this plugin.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">command /deletenote:<br/>delete object with name &quot;%player%.note&quot;
+                saved in ram<br/>command /deleteallobjects:<br/>delete all objects in ram
+            </div>
+        </div>
     </div>
 
 
-  </div>
-  <!-- other things are inserted here -->
+</div>
+<!-- other things are inserted here -->
 </body>
 </html>

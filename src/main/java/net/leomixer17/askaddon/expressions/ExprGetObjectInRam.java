@@ -1,14 +1,13 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import net.leomixer17.askaddon.ASkAddon;
+import org.bukkit.event.Event;
+
+import javax.annotation.Nullable;
 
 public class ExprGetObjectInRam extends SimpleExpression<Object> {
 	
@@ -19,7 +18,7 @@ public class ExprGetObjectInRam extends SimpleExpression<Object> {
 	{
 		return Object.class;
 	}
-
+	
 	@Override
 	public boolean isSingle()
 	{
@@ -44,8 +43,8 @@ public class ExprGetObjectInRam extends SimpleExpression<Object> {
 	@Nullable
 	protected Object[] get(Event e)
 	{
-		if(ASkAddon.objects.containsKey(this.name.getSingle(e)))
-			return new Object[] {ASkAddon.objects.get(this.name.getSingle(e))};
+		if (ASkAddon.objects.containsKey(this.name.getSingle(e)))
+			return new Object[]{ASkAddon.objects.get(this.name.getSingle(e))};
 		return null;
 	}
 	

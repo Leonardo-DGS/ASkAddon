@@ -1,12 +1,11 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.boss.BossBar;
-import org.bukkit.event.Event;
-
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.util.coll.CollectionUtils;
+import org.bukkit.boss.BossBar;
+import org.bukkit.event.Event;
 
 public class ExprBossBarProgress extends SimplePropertyExpression<BossBar, Number> {
 	
@@ -29,13 +28,13 @@ public class ExprBossBarProgress extends SimplePropertyExpression<BossBar, Numbe
 	
 	public Class<?>[] acceptChange(ChangeMode mode)
 	{
-		if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[] {
-			Number.class
+		if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[]{
+				Number.class
 		});
 		return null;
 	}
 	
-	public Class<?extends Number> getReturnType()
+	public Class<? extends Number> getReturnType()
 	{
 		return Number.class;
 	}

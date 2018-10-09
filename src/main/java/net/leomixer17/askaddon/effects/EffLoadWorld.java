@@ -7,12 +7,12 @@ import ch.njol.util.Kleenean;
 import org.bukkit.Bukkit;
 import org.bukkit.WorldCreator;
 import org.bukkit.event.Event;
+import org.eclipse.jdt.annotation.Nullable;
 
-import javax.annotation.Nullable;
 import java.io.File;
 
 public class EffLoadWorld extends Effect {
-
+	
 	private Expression<String> world;
 	
 	@SuppressWarnings("unchecked")
@@ -32,7 +32,7 @@ public class EffLoadWorld extends Effect {
 	@Override
 	protected void execute(Event e)
 	{
-		if(new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + File.separator + this.world.getSingle(e)).exists() && !Bukkit.getServer().getWorlds().contains(Bukkit.getWorld(world.getSingle(e))))
+		if (new File(Bukkit.getServer().getWorldContainer().getAbsolutePath() + File.separator + this.world.getSingle(e)).exists() && !Bukkit.getServer().getWorlds().contains(Bukkit.getWorld(world.getSingle(e))))
 			new WorldCreator(world.getSingle(e)).createWorld();
 	}
 	

@@ -1,14 +1,12 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.boss.BossBar;
-import org.bukkit.event.Event;
-
-import com.google.gson.Gson;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import com.google.gson.Gson;
+import org.bukkit.boss.BossBar;
+import org.bukkit.event.Event;
 
 public class ExprBossBarFromSerialised extends SimpleExpression<BossBar> {
 	
@@ -18,8 +16,8 @@ public class ExprBossBarFromSerialised extends SimpleExpression<BossBar> {
 	{
 		Gson gson = new Gson();
 		BossBar bar = (BossBar) gson.fromJson((String) this.data.getSingle(event), BossBar.class);
-		return new BossBar[] {
-			bar
+		return new BossBar[]{
+				bar
 		};
 	}
 	
@@ -28,7 +26,7 @@ public class ExprBossBarFromSerialised extends SimpleExpression<BossBar> {
 		return true;
 	}
 	
-	public Class<?extends BossBar> getReturnType()
+	public Class<? extends BossBar> getReturnType()
 	{
 		return BossBar.class;
 	}

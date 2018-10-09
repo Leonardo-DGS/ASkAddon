@@ -16,13 +16,15 @@ public class EffSendActionBar extends Effect {
 	private Expression<String> text;
 	
 	@SuppressWarnings("unchecked")
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
 	{
-		if (i == 1) {
+		if (i == 1)
+		{
 			this.player = (Expression<Player>) exprs[0];
 			this.text = (Expression<String>) exprs[1];
 		}
-		else {
+		else
+		{
 			this.text = (Expression<String>) exprs[0];
 			this.player = (Expression<Player>) exprs[1];
 		}

@@ -1,18 +1,17 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import org.bukkit.event.Event;
 
 public class ExprJavaVersion extends SimpleExpression<String> {
 	
 	protected String[] get(Event event)
 	{
-		return new String[] {
-			getVersion()
+		return new String[]{
+				getVersion()
 		};
 	}
 	

@@ -4,11 +4,12 @@ import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
-import java.util.ArrayList;
-import java.util.List;
 import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BossBar;
 import org.bukkit.event.Event;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
 	
@@ -18,7 +19,7 @@ public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
 	{
 		List<BarFlag> flags = new ArrayList<BarFlag>();
 		BossBar bar = (BossBar) this.bar.getSingle(event);
-		for (BarFlag barFlag: BarFlag.values())
+		for (BarFlag barFlag : BarFlag.values())
 			if (bar.hasFlag(barFlag))
 				flags.add(barFlag);
 		return (BarFlag[]) flags.toArray(new BarFlag[flags.size()]);
@@ -29,7 +30,7 @@ public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
 		return false;
 	}
 	
-	public Class<?extends BarFlag> getReturnType()
+	public Class<? extends BarFlag> getReturnType()
 	{
 		return BarFlag.class;
 	}
@@ -40,7 +41,7 @@ public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
 	{
 		this.bar = (Expression<BossBar>) exprs[0];
 		return true;

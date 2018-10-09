@@ -1,663 +1,714 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
-  <title>ASkAddon Documentation</title>
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+    <title>ASkAddon Documentation</title>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-  <div id="global-navigation">
-  <a href="index.html">Home</a>
-  <a href="events.html">Events</a>
-  <a href="conditions.html">Conditions</a>
-  <a href="effects.html">Effects</a>
-  <a href="expressions.html">Expressions</a>
-  <a href="classes.html">Types</a>
+<div id="global-navigation">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="effects.html">Effects</a>
+    <a href="expressions.html">Expressions</a>
+    <a href="classes.html">Types</a>
 </div>
 
-  <nav>
+<nav>
     <p id="nav-title">Table of Contents</p>
     <div id="nav-contents">
-<p><a href="#InventoryName">Inventory Name</a></p>
-<p><a href="#JsonMessage">Json Message</a></p>
-<p><a href="#JsonMessageCommand">Json Message Command</a></p>
-<p><a href="#JsonMessageURL">Json Message URL</a></p>
-<p><a href="#JsonMessageTooltip">Json Message Tooltip</a></p>
-<p><a href="#JsonMessageAppend">Json Message Append</a></p>
-<p><a href="#NewBossBar">New Boss Bar</a></p>
-<p><a href="#BossBarColour">Boss Bar Colour</a></p>
-<p><a href="#FlagsofBossBar">Flags of Boss Bar</a></p>
-<p><a href="#PlayersofBossBar">Players of Boss Bar</a></p>
-<p><a href="#BossBarProgress">Boss Bar Progress</a></p>
-<p><a href="#SerializedBossBar">Serialized Boss Bar</a></p>
-<p><a href="#BossBarFromSerialized">Boss Bar From Serialized</a></p>
-<p><a href="#DropsofBlock">Drops of Block</a></p>
-<p><a href="#SkullOwner">Skull Owner</a></p>
-<p><a href="#ObjectInRam">Object In Ram</a></p>
-<p><a href="#NewLine">New Line</a></p>
-<p><a href="#FreeMemory">Free Memory</a></p>
-<p><a href="#MaximumMemory">Maximum Memory</a></p>
-<p><a href="#TotalMemory">Total Memory</a></p>
-<p><a href="#JavaVersion">Java Version</a></p>
-<p><a href="#PingofPlayer">Ping of Player</a></p>
-<p><a href="#MaxPlayersCount">Max Players Count</a></p>
-<p><a href="#LoadedChunks">Loaded Chunks</a></p>
-<p><a href="#JsonMessageItemTooltip">Json Message Item Tooltip</a></p>
-<p><a href="#PlaceholderAPIPlaceholders">PlaceholderAPI Placeholders</a></p>
+        <p><a href="#InventoryName">Inventory Name</a></p>
+        <p><a href="#JsonMessage">Json Message</a></p>
+        <p><a href="#JsonMessageCommand">Json Message Command</a></p>
+        <p><a href="#JsonMessageURL">Json Message URL</a></p>
+        <p><a href="#JsonMessageTooltip">Json Message Tooltip</a></p>
+        <p><a href="#JsonMessageAppend">Json Message Append</a></p>
+        <p><a href="#NewBossBar">New Boss Bar</a></p>
+        <p><a href="#BossBarColour">Boss Bar Colour</a></p>
+        <p><a href="#FlagsofBossBar">Flags of Boss Bar</a></p>
+        <p><a href="#PlayersofBossBar">Players of Boss Bar</a></p>
+        <p><a href="#BossBarProgress">Boss Bar Progress</a></p>
+        <p><a href="#SerializedBossBar">Serialized Boss Bar</a></p>
+        <p><a href="#BossBarFromSerialized">Boss Bar From Serialized</a></p>
+        <p><a href="#DropsofBlock">Drops of Block</a></p>
+        <p><a href="#SkullOwner">Skull Owner</a></p>
+        <p><a href="#ObjectInRam">Object In Ram</a></p>
+        <p><a href="#NewLine">New Line</a></p>
+        <p><a href="#FreeMemory">Free Memory</a></p>
+        <p><a href="#MaximumMemory">Maximum Memory</a></p>
+        <p><a href="#TotalMemory">Total Memory</a></p>
+        <p><a href="#JavaVersion">Java Version</a></p>
+        <p><a href="#PingofPlayer">Ping of Player</a></p>
+        <p><a href="#MaxPlayersCount">Max Players Count</a></p>
+        <p><a href="#LoadedChunks">Loaded Chunks</a></p>
+        <p><a href="#JsonMessageItemTooltip">Json Message Item Tooltip</a></p>
+        <p><a href="#PlaceholderAPIPlaceholders">PlaceholderAPI Placeholders</a></p>
 
     </div>
-  </nav>
-  <div id="content">
+</nav>
+<div id="content">
     <h1>Expressions</h1>
 
 
     <div id="InventoryName" class="item-title">Inventory Name</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">name of inventory</span></li>
-              <li><span class="skript-code-inline">inventory's name</span></li>
-              <li><span class="skript-code-inline">name of[ inventory] %inventory%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the name of inventory given, or if not supplied, returns the name of inventory in inventory click events.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on inventory click:<br />broadcast &quot;%name of inventory%&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">name of inventory</span></li>
+                        <li><span class="skript-code-inline">inventory's name</span></li>
+                        <li><span class="skript-code-inline">name of[ inventory] %inventory%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the name of inventory given, or if not supplied, returns the name of
+            inventory in inventory click events.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on inventory click:<br/>broadcast &quot;%name of inventory%&quot;</div>
+        </div>
     </div>
 
     <div id="JsonMessage" class="item-title">Json Message</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">json [message] [(of|from)] %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a json message from a string, that can be customized with other expressions about json, and can be sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_jsonmessage} to json of &quot;I'm a json message&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">json [message] [(of|from)] %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a json message from a string, that can be customized with other
+            expressions about json, and can be sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_jsonmessage} to json of &quot;I'm a json message&quot;</div>
+        </div>
     </div>
 
     <div id="JsonMessageCommand" class="item-title">Json Message Command</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">%jsonmessage% suggest %string%</span></li>
-              <li><span class="skript-code-inline">%jsonmessage% run %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a json message, that suggest or run a command when a player clicks on it, that can be further customized or sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">json message of &quot;I'm a json message&quot; suggest &quot;/examplecommand&quot;<br />json message of &quot;I'm a json message&quot; run &quot;/examplecommand&quot;<br />json message of &quot;I'm a json message&quot; suggest &quot;/examplecommand&quot; run &quot;/anothercommand&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">%jsonmessage% suggest %string%</span></li>
+                        <li><span class="skript-code-inline">%jsonmessage% run %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a json message, that suggest or run a command when a player clicks on it,
+            that can be further customized or sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">json message of &quot;I'm a json message&quot; suggest &quot;/examplecommand&quot;<br/>json
+                message of &quot;I'm a json message&quot; run &quot;/examplecommand&quot;<br/>json message of &quot;I'm
+                a json message&quot; suggest &quot;/examplecommand&quot; run &quot;/anothercommand&quot;
+            </div>
+        </div>
     </div>
 
     <div id="JsonMessageURL" class="item-title">Json Message URL</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">%jsonmessage% open [url] %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a json message, that open an url to the player when it clicks on the message, that can be further customized or sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">json message of &quot;I'm a json message&quot; open url &quot;<a href="http://adf.ly/1lrgfA" target="_blank">www.adf.ly/1lrgfA</a>&quot;<br />json message of &quot;I'm a json message&quot; open &quot;<a href="http://adf.ly/1lrgls" target="_blank">www.adf.ly/1lrgls</a>&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">%jsonmessage% open [url] %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a json message, that open an url to the player when it clicks on the
+            message, that can be further customized or sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">json message of &quot;I'm a json message&quot; open url &quot;<a
+                    href="http://adf.ly/1lrgfA" target="_blank">www.adf.ly/1lrgfA</a>&quot;<br/>json message of &quot;I'm
+                a json message&quot; open &quot;<a href="http://adf.ly/1lrgls" target="_blank">www.adf.ly/1lrgls</a>&quot;
+            </div>
+        </div>
     </div>
 
     <div id="JsonMessageTooltip" class="item-title">Json Message Tooltip</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">%jsonmessage% tooltip %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a json message, that show a tooltip to the player when it hover on the message, that can be further customized or sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">json message of &quot;I'm a json message&quot; tooltip &quot;I'm a tooltip&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">%jsonmessage% tooltip %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a json message, that show a tooltip to the player when it hover on the
+            message, that can be further customized or sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">json message of &quot;I'm a json message&quot; tooltip &quot;I'm a tooltip&quot;</div>
+        </div>
     </div>
 
     <div id="JsonMessageAppend" class="item-title">Json Message Append</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">%jsonmessage% (then|append) %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Appends a json message cleared from effects to another json message, that can be further customized or sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">json of &quot;I'm a json message&quot; tooltip &quot;I'm a tooltip&quot; suggest &quot;/examplecommand&quot; append &quot;I'm another json message&quot; tooltip &quot;I'm another tooltip&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">%jsonmessage% (then|append) %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Appends a json message cleared from effects to another json message, that can be
+            further customized or sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">json of &quot;I'm a json message&quot; tooltip &quot;I'm a tooltip&quot;
+                suggest &quot;/examplecommand&quot; append &quot;I'm another json message&quot; tooltip &quot;I'm
+                another tooltip&quot;
+            </div>
+        </div>
     </div>
 
     <div id="NewBossBar" class="item-title">New Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">new boss[ ]bar</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Creates a new boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new boss bar</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">new boss[ ]bar</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Creates a new boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new boss bar</div>
+        </div>
     </div>
 
     <div id="BossBarColour" class="item-title">Boss Bar Colour</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">[boss][ ][bar] bar colo[u]r of %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the color of a bossbar. You can also set it.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new bossbar<br />set bar color of {_bossbar} to red</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">[boss][ ][bar] bar colo[u]r of %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the color of a bossbar. You can also set it.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new bossbar<br/>set bar color of {_bossbar} to red</div>
+        </div>
     </div>
 
     <div id="FlagsofBossBar" class="item-title">Flags of Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">list of flags of [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Lists flags of a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new bossbar<br />list of flags of bossbar {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">list of flags of [boss][ ][bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Lists flags of a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new bossbar<br/>list of flags of bossbar {_bossbar}</div>
+        </div>
     </div>
 
     <div id="PlayersofBossBar" class="item-title">Players of Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">list of players of [boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a list of players of a boss bar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new bossbar<br />list of players of bossbar {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">list of players of [boss][ ][bar] %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a list of players of a boss bar.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new bossbar<br/>list of players of bossbar {_bossbar}</div>
+        </div>
     </div>
 
     <div id="BossBarProgress" class="item-title">Boss Bar Progress</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">[boss][ ][bar] progress of %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the progress of a bossbar, that can be changed. It's a number between 0 and 1.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new bossbar<br />set bar progress of {_bossbar} to 0.4</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">[boss][ ][bar] progress of %bossbar%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the progress of a bossbar, that can be changed. It's a number between 0
+            and 1.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new bossbar<br/>set bar progress of {_bossbar} to 0.4</div>
+        </div>
     </div>
 
     <div id="SerializedBossBar" class="item-title">Serialized Boss Bar</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">seriali(z|s)ed [(contents|data)][ of][ boss][ ][bar] %bossbar%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a string that contains data of the bossbar, and that can be reconverted to the original bossbar.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to new bossbar<br />set {serializedbossbar} to serialized data of {_bossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">seriali(z|s)ed [(contents|data)][ of][ boss][ ][bar] %bossbar%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a string that contains data of the bossbar, and that can be reconverted to
+            the original bossbar.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to new bossbar<br/>set {serializedbossbar} to serialized data
+                of {_bossbar}
+            </div>
+        </div>
     </div>
 
     <div id="BossBarFromSerialized" class="item-title">Boss Bar From Serialized</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">boss[ ]bar from data %string%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the bossbar from a previously serialized bossbar in a string form.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_bossbar} to boss bar from data {serializedbossbar}</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">boss[ ]bar from data %string%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the bossbar from a previously serialized bossbar in a string form.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_bossbar} to boss bar from data {serializedbossbar}</div>
+        </div>
     </div>
 
     <div id="DropsofBlock" class="item-title">Drops of Block</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">drops of [block] %block%</span></li>
-              <li><span class="skript-code-inline">drops of [block] %block% with [item] %itemstack%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns potential drops of a placed block, optionally if broken with the specified item.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">drops of block placed-block<br />drops of block placed-block with iron pickaxe</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">drops of [block] %block%</span></li>
+                        <li><span class="skript-code-inline">drops of [block] %block% with [item] %itemstack%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns potential drops of a placed block, optionally if broken with the specified
+            item.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">drops of block placed-block<br/>drops of block placed-block with iron pickaxe
+            </div>
+        </div>
     </div>
 
     <div id="SkullOwner" class="item-title">Skull Owner</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">[the ]skull owner of %itemstack%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the skull owner name of a skull item.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_skullowner} to skull owner of player's item</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">[the ]skull owner of %itemstack%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the skull owner name of a skull item.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_skullowner} to skull owner of player's item</div>
+        </div>
     </div>
 
     <div id="ObjectInRam" class="item-title">Object In Ram</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">object [with name] %string% [saved] in ram</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Gets an object by name previously saved in ram.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">save object player's name in ram &quot;playername&quot;<br />set {_playername} to object &quot;playername&quot; saved in ram</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">object [with name] %string% [saved] in ram</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Gets an object by name previously saved in ram.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">save object player's name in ram &quot;playername&quot;<br/>set {_playername}
+                to object &quot;playername&quot; saved in ram
+            </div>
+        </div>
     </div>
 
     <div id="NewLine" class="item-title">New Line</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">(new[ ]line|nl)</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Simply returns the newline character.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on command /examplecommand:<br />trigger:<br />send &quot;Message%nl%Message in a new line&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">(new[ ]line|nl)</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Simply returns the newline character.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on command /examplecommand:<br/>trigger:<br/>send &quot;Message%nl%Message in
+                a new line&quot;
+            </div>
+        </div>
     </div>
 
     <div id="FreeMemory" class="item-title">Free Memory</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">free memory</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the free memory of the java virtual machine.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_freememory} to free memory</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">free memory</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the free memory of the java virtual machine.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_freememory} to free memory</div>
+        </div>
     </div>
 
     <div id="MaximumMemory" class="item-title">Maximum Memory</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">max[imum] memory</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the maximum ram memory of the java virtual machine.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_maximummemory} to maximum memory</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">max[imum] memory</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the maximum ram memory of the java virtual machine.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_maximummemory} to maximum memory</div>
+        </div>
     </div>
 
     <div id="TotalMemory" class="item-title">Total Memory</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">total memory</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the total ram memory of the java virtual machine.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_totalmemory} to total memory</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">total memory</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the total ram memory of the java virtual machine.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_totalmemory} to total memory</div>
+        </div>
     </div>
 
     <div id="JavaVersion" class="item-title">Java Version</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">java version</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns java version of the server.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">set {_javaversion} to java version</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">java version</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns java version of the server.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">set {_javaversion} to java version</div>
+        </div>
     </div>
 
     <div id="PingofPlayer" class="item-title">Ping of Player</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">ping of [player] %player%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the ping of player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on command /ping:<br />trigger:<br />send &quot;Your ping: %ping of player%ms&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">ping of [player] %player%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the ping of player.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on command /ping:<br/>trigger:<br/>send &quot;Your ping: %ping of player%ms&quot;
+            </div>
+        </div>
     </div>
 
     <div id="MaxPlayersCount" class="item-title">Max Players Count</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">max players count</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the max player count of the server.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on command /maxplayerscount:<br />trigger:<br />send &quot;Max players count: %max players count%&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">max players count</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the max player count of the server.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on command /maxplayerscount:<br/>trigger:<br/>send &quot;Max players count:
+                %max players count%&quot;
+            </div>
+        </div>
     </div>
 
     <div id="LoadedChunks" class="item-title">Loaded Chunks</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">[all] loaded chunks</span></li>
-              <li><span class="skript-code-inline">loaded chunks of all worlds</span></li>
-              <li><span class="skript-code-inline">loaded chunks of [world] %world%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.0</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns the loaded chunks of a world if specified, otherwise all worlds.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">loaded chunks of all worlds<br />loaded chunks of &quot;Spawn&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">[all] loaded chunks</span></li>
+                        <li><span class="skript-code-inline">loaded chunks of all worlds</span></li>
+                        <li><span class="skript-code-inline">loaded chunks of [world] %world%</span></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.0</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns the loaded chunks of a world if specified, otherwise all worlds.</div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">loaded chunks of all worlds<br/>loaded chunks of &quot;Spawn&quot;</div>
+        </div>
     </div>
 
     <div id="JsonMessageItemTooltip" class="item-title">Json Message Item Tooltip</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">%jsonmessage% (item[ ]tooltip|tooltip[ ]item) %itemstack%</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.1.1</td>
-        </tr>
-      </table>
-      <div class="item-description">Returns a json message, that show an item as tooltip to the player when it hover on the message, that can be further customized or sent to a player.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">json message of &quot;I'm a json message&quot; item tooltip stone<br />json message of &quot;I'm a json message&quot; tooltip item player's tool</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span
+                                class="skript-code-inline">%jsonmessage% (item[ ]tooltip|tooltip[ ]item) %itemstack%</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.1.1</td>
+            </tr>
+        </table>
+        <div class="item-description">Returns a json message, that show an item as tooltip to the player when it hover
+            on the message, that can be further customized or sent to a player.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">json message of &quot;I'm a json message&quot; item tooltip stone<br/>json
+                message of &quot;I'm a json message&quot; tooltip item player's tool
+            </div>
+        </div>
     </div>
 
     <div id="PlaceholderAPIPlaceholders" class="item-title">PlaceholderAPI Placeholders</div>
     <div class="item-content">
-      <table>
-        <tr>
-          <td class="item-table-label">Pattern:</td>
-          <td>
-            <ul>
-              <li><span class="skript-code-inline">placeholderapi [parse[d]] place[ ]holder[s] [(from|with)] %string% [[(from|for)] %player%]</span></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td class="item-table-label">Since:</td>
-          <td>1.1.4</td>
-        </tr>
-      </table>
-      <div class="item-description">Parse PlaceholderAPI's placeholders from a string and returns the string with the placeholders replaced. You have to double percentages in these expressions.</div>
-      <div class="item-examples">
-        Examples:
-        <div class="skript-code-block">on command /testplaceholderping:<br />trigger:<br />set {_placeholderapiping} to placeholderapi parsed placeholders from &quot;Your ping: %%player_ping%%&quot; for player<br />message &quot;%{_placeholderapiping}%&quot;</div>
-      </div>
+        <table>
+            <tr>
+                <td class="item-table-label">Pattern:</td>
+                <td>
+                    <ul>
+                        <li><span class="skript-code-inline">placeholderapi [parse[d]] place[ ]holder[s] [(from|with)] %string% [[(from|for)] %player%]</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-table-label">Since:</td>
+                <td>1.1.4</td>
+            </tr>
+        </table>
+        <div class="item-description">Parse PlaceholderAPI's placeholders from a string and returns the string with the
+            placeholders replaced. You have to double percentages in these expressions.
+        </div>
+        <div class="item-examples">
+            Examples:
+            <div class="skript-code-block">on command /testplaceholderping:<br/>trigger:<br/>set {_placeholderapiping}
+                to placeholderapi parsed placeholders from &quot;Your ping: %%player_ping%%&quot; for player<br/>message
+                &quot;%{_placeholderapiping}%&quot;
+            </div>
+        </div>
     </div>
 
 
-  </div>
-  <!-- other things are inserted here -->
+</div>
+<!-- other things are inserted here -->
 </body>
 </html>

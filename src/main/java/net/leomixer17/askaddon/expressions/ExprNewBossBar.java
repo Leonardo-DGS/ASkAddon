@@ -16,8 +16,8 @@ public class ExprNewBossBar extends SimpleExpression<BossBar> {
 	protected BossBar[] get(Event event)
 	{
 		BossBar bar = Bukkit.createBossBar("Default Title", BarColor.GREEN, BarStyle.SEGMENTED_20, new BarFlag[0]);
-		return new BossBar[] {
-			bar
+		return new BossBar[]{
+				bar
 		};
 	}
 	

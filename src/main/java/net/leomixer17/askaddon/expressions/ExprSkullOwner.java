@@ -1,18 +1,17 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
-import org.bukkit.Material;
-import org.bukkit.event.Event;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
-
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
+import org.bukkit.Material;
+import org.bukkit.event.Event;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+
+import javax.annotation.Nullable;
 
 public class ExprSkullOwner extends SimpleExpression<String> {
 	
@@ -49,15 +48,16 @@ public class ExprSkullOwner extends SimpleExpression<String> {
 	@Nullable
 	protected String[] get(Event e)
 	{
-		if(this.skull.getSingle(e).getType().equals(Material.SKULL_ITEM))
-			return new String[]{ ((SkullMeta) this.skull.getSingle(e).getItemMeta()).getOwner() };
+		if (this.skull.getSingle(e).getType().equals(Material.SKULL_ITEM))
+			return new String[]{((SkullMeta) this.skull.getSingle(e).getItemMeta()).getOwner()};
 		return null;
 	}
 	
 	@SuppressWarnings("deprecation")
 	public void change(Event e, Object[] delta, ChangeMode mode)
 	{
-		if (mode == ChangeMode.SET){
+		if (mode == ChangeMode.SET)
+		{
 			SkullMeta meta = (SkullMeta) this.skull.getSingle(e).getItemMeta();
 			meta.setOwner((String) delta[0]);
 			this.skull.getSingle(e).setItemMeta(meta);
@@ -66,7 +66,7 @@ public class ExprSkullOwner extends SimpleExpression<String> {
 	
 	public Class<?>[] acceptChange(ChangeMode mode)
 	{
-		return (Class[]) CollectionUtils.array(new Class[] { String.class });
+		return (Class[]) CollectionUtils.array(new Class[]{String.class});
 	}
 	
 }

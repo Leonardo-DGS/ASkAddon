@@ -1,16 +1,15 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
+import ch.njol.skript.lang.Expression;
+import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.lang.util.SimpleExpression;
+import ch.njol.util.Kleenean;
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;
 import org.bukkit.event.block.BlockEvent;
 import org.bukkit.inventory.ItemStack;
 
-import ch.njol.skript.lang.Expression;
-import ch.njol.skript.lang.SkriptParser;
-import ch.njol.skript.lang.util.SimpleExpression;
-import ch.njol.util.Kleenean;
+import javax.annotation.Nullable;
 
 public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 	
@@ -18,7 +17,7 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 	private Expression<ItemStack> item;
 	private boolean b;
 	
-	public Class <?extends ItemStack> getReturnType()
+	public Class<? extends ItemStack> getReturnType()
 	{
 		return ItemStack.class;
 	}
@@ -30,11 +29,11 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean init(Expression < ?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
+	public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
 	{
-		this.block = (Expression < Block > ) exprs[0];
+		this.block = (Expression<Block>) exprs[0];
 		this.b = i == 1;
-		if (i == 1) this.item = (Expression < ItemStack > ) exprs[1];
+		if (i == 1) this.item = (Expression<ItemStack>) exprs[1];
 		return true;
 	}
 	
@@ -51,12 +50,14 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 		ItemStack[] items = new ItemStack[((BlockEvent) event).getBlock().getDrops().size()];
 		int i = 0;
 		if (!b)
-			for (ItemStack is: this.block.getSingle(event).getDrops()) {
+			for (ItemStack is : this.block.getSingle(event).getDrops())
+			{
 				items[i] = is;
 				i++;
 			}
 		else
-			for (ItemStack is: this.block.getSingle(event).getDrops(this.item.getSingle(event))) {
+			for (ItemStack is : this.block.getSingle(event).getDrops(this.item.getSingle(event)))
+			{
 				items[i] = is;
 				i++;
 			}

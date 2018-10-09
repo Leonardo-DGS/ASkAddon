@@ -1,16 +1,15 @@
 package net.leomixer17.askaddon.utils;
 
-import java.io.StringWriter;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.google.gson.stream.JsonWriter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.google.gson.stream.JsonWriter;
+import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JSONMessage {
 	
@@ -19,13 +18,13 @@ public class JSONMessage {
 	private boolean dirty;
 	private Class<?> nmsTagCompound = Reflection.nmsClass("NBTTagCompound");
 	//private Class<?> nmsAchievement = Reflection.nmsClass("Achievement");
-	private Class <?>nmsItemStack = Reflection.nmsClass("ItemStack");
+	private Class<?> nmsItemStack = Reflection.nmsClass("ItemStack");
 	//private Class<?> obcStatistic = Reflection.obcClass("CraftStatistic");
-	private Class <?>obcItemStack = Reflection.obcClass("inventory.CraftItemStack");
+	private Class<?> obcItemStack = Reflection.obcClass("inventory.CraftItemStack");
 	
 	public JSONMessage(String firstPartText)
 	{
-		this.messageParts = new ArrayList < MessagePart > ();
+		this.messageParts = new ArrayList<MessagePart>();
 		this.messageParts.add(new MessagePart(firstPartText));
 		this.jsonString = null;
 		this.dirty = false;
@@ -42,7 +41,7 @@ public class JSONMessage {
 	
 	public JSONMessage style(ChatColor[] styles)
 	{
-		for (ChatColor style: styles)
+		for (ChatColor style : styles)
 			if (!style.isFormat())
 				throw new IllegalArgumentException(new StringBuilder().append(style.name()).append(" is not a style").toString());
 		latest().styles = styles;
@@ -104,17 +103,19 @@ public class JSONMessage {
 	
 	public JSONMessage itemTooltip(ItemStack itemStack)
 	{
-		try {
-			Object nmsItem = Reflection.getMethod(this.obcItemStack, "asNMSCopy", new Class[] {
-				ItemStack.class
-			}).invoke(null, new Object[] {
-				itemStack
+		try
+		{
+			Object nmsItem = Reflection.getMethod(this.obcItemStack, "asNMSCopy", new Class[]{
+					ItemStack.class
+			}).invoke(null, new Object[]{
+					itemStack
 			});
-			return itemTooltip(Reflection.getMethod(this.nmsItemStack, "save", new Class[0]).invoke(nmsItem, new Object[] {
-				this.nmsTagCompound.newInstance()
+			return itemTooltip(Reflection.getMethod(this.nmsItemStack, "save", new Class[0]).invoke(nmsItem, new Object[]{
+					this.nmsTagCompound.newInstance()
 			}).toString());
 		}
-		catch(Exception e) {
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 		return this;
@@ -123,7 +124,8 @@ public class JSONMessage {
 	public JSONMessage tooltip(String[] lines)
 	{
 		StringBuilder builder = new StringBuilder();
-		for (int i = 0; i < lines.length; i++) {
+		for (int i = 0; i < lines.length; i++)
+		{
 			builder.append(lines[i]);
 			if (i != lines.length - 1)
 				builder.append('\n');
@@ -145,18 +147,21 @@ public class JSONMessage {
 			return this.jsonString;
 		StringWriter string = new StringWriter();
 		JsonWriter json = new JsonWriter(string);
-		try {
+		try
+		{
 			if (this.messageParts.size() == 1)
 				latest().writeJson(json);
-			else {
+			else
+			{
 				json.beginObject().name("text").value("").name("extra").beginArray();
-				for (MessagePart part: this.messageParts)
+				for (MessagePart part : this.messageParts)
 					part.writeJson(json);
 				json.endArray().endObject();
 				json.close();
 			}
 		}
-		catch(Exception e) {
+		catch (Exception e)
+		{
 			throw new RuntimeException("invalid message");
 		}
 		this.jsonString = string.toString();
@@ -167,14 +172,18 @@ public class JSONMessage {
 	public void send(Player[] players)
 	{
 		final String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-		final String nmsClass = ((!version.startsWith("v1_7_R")) ? "IChatBaseComponent$": "") + "ChatSerializer";
-		for (Player p: players) {
-			try {
+		final String nmsClass = ((!version.startsWith("v1_7_R")) ? "IChatBaseComponent$" : "") + "ChatSerializer";
+		for (Player p : players)
+		{
+			try
+			{
 				final Object packet = TitleAPI.getNMSClass("PacketPlayOutChat").getConstructor(TitleAPI.getNMSClass("IChatBaseComponent")).newInstance(TitleAPI.getNMSClass(nmsClass).getMethod("a", String.class).invoke(null, toJSONString()));
 				final Object handle = p.getClass().getMethod("getHandle").invoke(p);
 				final Object playerConnection = handle.getClass().getField("playerConnection").get(handle);
 				playerConnection.getClass().getMethod("sendPacket", TitleAPI.getNMSClass("Packet")).invoke(playerConnection, packet);
-			} catch(SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | InstantiationException | NoSuchFieldException ex) {
+			}
+			catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | InstantiationException | NoSuchFieldException ex)
+			{
 				ex.printStackTrace();
 			}
 		}
@@ -183,7 +192,7 @@ public class JSONMessage {
 	public String toOldMessageFormat()
 	{
 		StringBuilder result = new StringBuilder();
-		for (MessagePart part: this.messageParts)
+		for (MessagePart part : this.messageParts)
 			result.append(part.color).append(part.text);
 		return result.toString();
 	}

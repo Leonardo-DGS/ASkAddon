@@ -1,15 +1,14 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import me.clip.placeholderapi.PlaceholderAPI;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+
+import javax.annotation.Nullable;
 
 public class ExprPlaceholderAPIPlaceholders extends SimpleExpression<String> {
 	
@@ -47,10 +46,10 @@ public class ExprPlaceholderAPIPlaceholders extends SimpleExpression<String> {
 	@Nullable
 	protected String[] get(Event e)
 	{
-		if(this.player == null)
-			return new String[]{ PlaceholderAPI.setPlaceholders(null, this.text.getSingle(e)) };
+		if (this.player == null)
+			return new String[]{PlaceholderAPI.setPlaceholders(null, this.text.getSingle(e))};
 		else
-			return new String[]{ PlaceholderAPI.setPlaceholders((Player) this.player.getSingle(e), this.text.getSingle(e)) };
+			return new String[]{PlaceholderAPI.setPlaceholders((Player) this.player.getSingle(e), this.text.getSingle(e))};
 	}
 	
 }

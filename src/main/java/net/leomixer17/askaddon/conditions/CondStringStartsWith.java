@@ -12,7 +12,7 @@ public class CondStringStartsWith extends Condition {
 	private Expression<String> stringToCheck;
 	private Expression<String> stringstartswith;
 	private boolean b;
-
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)

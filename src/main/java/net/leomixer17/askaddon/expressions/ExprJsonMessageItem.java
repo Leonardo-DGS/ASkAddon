@@ -1,14 +1,13 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.event.Event;
-import org.bukkit.inventory.ItemStack;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import net.leomixer17.askaddon.utils.Collect;
 import net.leomixer17.askaddon.utils.JSONMessage;
+import org.bukkit.event.Event;
+import org.bukkit.inventory.ItemStack;
 
 public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
 	
@@ -20,8 +19,8 @@ public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
 		JSONMessage j = (JSONMessage) this.json.getSingle(event);
 		ItemStack a = (ItemStack) this.item.getSingle(event);
 		if ((j == null) || (a == null)) return null;
-		return (JSONMessage[]) Collect.asArray(new JSONMessage[] {
-			j.itemTooltip(a)
+		return (JSONMessage[]) Collect.asArray(new JSONMessage[]{
+				j.itemTooltip(a)
 		});
 	}
 	
@@ -30,7 +29,7 @@ public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
 		return true;
 	}
 	
-	public Class <? extends JSONMessage> getReturnType()
+	public Class<? extends JSONMessage> getReturnType()
 	{
 		return JSONMessage.class;
 	}

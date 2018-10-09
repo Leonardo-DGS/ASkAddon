@@ -11,7 +11,7 @@ targetCompatibility = 1.8
 repositories {
     jcenter()
     mavenCentral()
-    
+
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
     maven { url = 'http://repo.extendedclip.com/content/repositories/placeholderapi/' }
     maven { url = 'https://repo.destroystokyo.com/repository/maven-public/' }
@@ -22,18 +22,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
-    implementation 'com.github.SkriptLang:Skript:dev37c'
-    implementation 'me.clip:placeholderapi:2.9.2'
-    compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version:'1.1.0'
+    compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+    compileOnly 'com.github.SkriptLang:Skript:dev37c'
+    compileOnly 'me.clip:placeholderapi:2.9.2'
+    compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '1.1.0'
 }
 
 processResources {
     filter ReplaceTokens, tokens: [
-            "version" : System.getenv('ASKADDON_VERSION') == null ? project.property("version") : System.getenv('ASKADDON_VERSION')
+            "version": project.property("version")
     ]
 }
 
 jar {
-    archiveName System.getenv('ASKADDON_JAR_NAME') == null ? 'ASkAddon.jar' : System.getenv("ASKADDON_JAR_NAME")
+    archiveName 'ASkAddon.jar'
 }

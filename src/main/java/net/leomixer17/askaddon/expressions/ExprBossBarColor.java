@@ -27,15 +27,15 @@ public class ExprBossBarColor extends SimplePropertyExpression<BossBar, BarColor
 			bar.setColor(b);
 	}
 	
-	public Class < ?>[] acceptChange(ChangeMode mode)
+	public Class<?>[] acceptChange(ChangeMode mode)
 	{
-		if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[] {
-			BarColor.class
+		if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[]{
+				BarColor.class
 		});
 		return null;
 	}
 	
-	public Class <?extends BarColor> getReturnType()
+	public Class<? extends BarColor> getReturnType()
 	{
 		return BarColor.class;
 	}

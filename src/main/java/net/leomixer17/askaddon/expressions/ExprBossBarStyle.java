@@ -1,13 +1,12 @@
 package net.leomixer17.askaddon.expressions;
 
-import org.bukkit.boss.BarStyle;
-import org.bukkit.boss.BossBar;
-import org.bukkit.event.Event;
-
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.util.coll.CollectionUtils;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
+import org.bukkit.event.Event;
 
 public class ExprBossBarStyle extends SimplePropertyExpression<BossBar, BarStyle> {
 	
@@ -28,16 +27,16 @@ public class ExprBossBarStyle extends SimplePropertyExpression<BossBar, BarStyle
 			bar.setStyle(b);
 	}
 	
-	public Class < ?>[] acceptChange(ChangeMode mode)
+	public Class<?>[] acceptChange(ChangeMode mode)
 	{
 		if (mode == Changer.ChangeMode.SET)
-			return (Class[]) CollectionUtils.array(new Class[] {
-				BarStyle.class
+			return (Class[]) CollectionUtils.array(new Class[]{
+					BarStyle.class
 			});
 		return null;
 	}
 	
-	public Class < ?extends BarStyle > getReturnType()
+	public Class<? extends BarStyle> getReturnType()
 	{
 		return BarStyle.class;
 	}

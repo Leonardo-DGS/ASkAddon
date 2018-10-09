@@ -31,7 +31,7 @@ public class EffDeleteFile extends Effect {
 	protected void execute(Event e)
 	{
 		final File f = new File(this.fname.getSingle(e));
-		if(f.exists())
+		if (f.exists())
 			f.delete();
 	}
 	

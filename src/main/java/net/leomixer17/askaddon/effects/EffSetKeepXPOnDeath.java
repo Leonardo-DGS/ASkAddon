@@ -30,7 +30,7 @@ public class EffSetKeepXPOnDeath extends Effect {
 	@Override
 	protected void execute(Event event)
 	{
-		if(event instanceof PlayerDeathEvent)
+		if (event instanceof PlayerDeathEvent)
 			((PlayerDeathEvent) event).setKeepLevel(this.keepxp.getSingle(event));
 	}
 	

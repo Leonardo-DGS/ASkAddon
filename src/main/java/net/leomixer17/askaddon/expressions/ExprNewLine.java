@@ -1,13 +1,12 @@
 package net.leomixer17.askaddon.expressions;
 
-import javax.annotation.Nullable;
-
-import org.bukkit.event.Event;
-
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import org.bukkit.event.Event;
+
+import javax.annotation.Nullable;
 
 public class ExprNewLine extends SimpleExpression<String> {
 	
@@ -39,7 +38,7 @@ public class ExprNewLine extends SimpleExpression<String> {
 	@Nullable
 	protected String[] get(Event event)
 	{
-		return new String[]{ "\n" };
+		return new String[]{"\n"};
 	}
 	
 }

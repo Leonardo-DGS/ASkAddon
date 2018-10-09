@@ -23,7 +23,7 @@ public class Collect {
 		for (int i = 0; i < strings.length; i++) strings[i] = array[i].toString().toLowerCase().replace("_", " ");
 		return strings;
 	}
-
+	
 	public static <T> T[] asArray(T[] objects)
 	{
 		return objects;
@@ -32,12 +32,12 @@ public class Collect {
 	@SuppressWarnings("unchecked")
 	public static <T> T[] newArray(Class<?> type, int size)
 	{
-		return (T[])Array.newInstance(type, size);
+		return (T[]) Array.newInstance(type, size);
 	}
 	
 	public static String[] asSkriptProperty(String property, String fromType)
 	{
-		return (String[])asArray(new String[] { new StringBuilder().append("[the] ").append(property).append(" of %").append(fromType).append("%").toString(), new StringBuilder().append("%").append(fromType).append("%'[s] ").append(property).toString() });
+		return (String[]) asArray(new String[]{new StringBuilder().append("[the] ").append(property).append(" of %").append(fromType).append("%").toString(), new StringBuilder().append("%").append(fromType).append("%'[s] ").append(property).toString()});
 	}
 	
 	public static <T> String toString(T[] array)
@@ -59,7 +59,8 @@ public class Collect {
 		if (max == -1)
 			return "";
 		String b = "";
-		for (int i = 0; ; i++) {
+		for (int i = 0; ; i++)
+		{
 			b = new StringBuilder().append(b).append(String.valueOf(array[i])).toString();
 			if (i == max)
 				return b;
@@ -79,30 +80,46 @@ public class Collect {
 	public static String textPart(InputStream is)
 	{
 		if (is == null) return "";
-		Scanner s = new Scanner(is).useDelimiter("\\A"); Throwable localThrowable2 = null;
-		try {
+		Scanner s = new Scanner(is).useDelimiter("\\A");
+		Throwable localThrowable2 = null;
+		try
+		{
 			return s.hasNext() ? s.next() : "";
-		} catch (Throwable localThrowable3) {
-			localThrowable2 = localThrowable3; throw localThrowable3;
-		} finally {
-			if (s != null) if (localThrowable2 != null) try { s.close(); } catch (Throwable x2) { localThrowable2.addSuppressed(x2); } else s.close();  
+		}
+		catch (Throwable localThrowable3)
+		{
+			localThrowable2 = localThrowable3;
+			throw localThrowable3;
+		}
+		finally
+		{
+			if (s != null) if (localThrowable2 != null) try
+			{
+				s.close();
+			}
+			catch (Throwable x2)
+			{
+				localThrowable2.addSuppressed(x2);
+			}
+			else s.close();
 		}
 	}
 	
 	private static ArrayList<File> getListFiles(File root, FilenameFilter filter, ArrayList<File> toAdd)
 	{
-		for (File f : root.listFiles(filter)) {
+		for (File f : root.listFiles(filter))
+		{
 			if (f.isDirectory()) return getListFiles(f, filter, toAdd);
 			toAdd.add(f);
 		}
 		return toAdd;
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({"unchecked", "rawtypes"})
 	public static File[] getFiles(File root, FilenameFilter filter)
 	{
 		ArrayList files = getListFiles(root, filter, new ArrayList());
-		return (File[])files.toArray(new File[files.size()]);
+		return (File[]) files.toArray(new File[files.size()]);
 	}
 	
 	public static File[] getFiles(File root)

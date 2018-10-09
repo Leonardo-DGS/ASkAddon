@@ -17,10 +17,11 @@ public class EvtPlayerShearEntity extends SkriptEvent {
 	}
 	
 	@Override
-	public boolean check(Event event) {
+	public boolean check(Event event)
+	{
 		return (event instanceof PlayerShearEntityEvent);
 	}
-
+	
 	@Override
 	public boolean init(Literal<?>[] arg0, int i, ParseResult arg2)
 	{

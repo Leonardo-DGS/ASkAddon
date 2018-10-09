@@ -17,10 +17,14 @@ public class EffCreateFile extends Effect {
 	protected void execute(Event event)
 	{
 		final File f = new File(file.getSingle(event));
-		if (!f.exists()) {
-			try {
+		if (!f.exists())
+		{
+			try
+			{
 				f.createNewFile();
-			} catch(IOException e) {
+			}
+			catch (IOException e)
+			{
 				e.printStackTrace();
 			}
 		}
@@ -32,7 +36,8 @@ public class EffCreateFile extends Effect {
 		return "create a file";
 	}
 	
-	@Override@SuppressWarnings("unchecked")
+	@Override
+	@SuppressWarnings("unchecked")
 	public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult)
 	{
 		this.file = (Expression<String>) expressions[0];

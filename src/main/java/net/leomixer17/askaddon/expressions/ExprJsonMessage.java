@@ -15,7 +15,7 @@ public class ExprJsonMessage extends SimplePropertyExpression<String, JSONMessag
 		return new JSONMessage(s);
 	}
 	
-	public Class <? extends JSONMessage> getReturnType()
+	public Class<? extends JSONMessage> getReturnType()
 	{
 		return JSONMessage.class;
 	}

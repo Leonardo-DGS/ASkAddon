@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
 public final class TitleAPI {
-
+    
     public static void sendPacket(Player player, Object packet)
     {
         try
@@ -22,7 +22,7 @@ public final class TitleAPI {
             e.printStackTrace();
         }
     }
-
+    
     public static Class<?> getNMSClass(String name)
     {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
@@ -36,7 +36,7 @@ public final class TitleAPI {
             return null;
         }
     }
-
+    
     @SuppressWarnings("rawtypes")
     public static void sendTitle(Player player, Integer fadeIn, Integer stay, Integer fadeOut, String title, String subtitle)
     {
@@ -48,7 +48,7 @@ public final class TitleAPI {
             Constructor subtitleConstructor;
             Object titlePacket;
             Object subtitlePacket;
-
+            
             if (title != null)
             {
                 // Times packets
@@ -57,14 +57,14 @@ public final class TitleAPI {
                 subtitleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(new Class[]{getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"), Integer.TYPE, Integer.TYPE, Integer.TYPE});
                 titlePacket = subtitleConstructor.newInstance(new Object[]{e, chatTitle, fadeIn, stay, fadeOut});
                 sendPacket(player, titlePacket);
-
+                
                 e = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get((Object) null);
                 chatTitle = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", new Class[]{String.class}).invoke((Object) null, new Object[]{"{\"text\":\"" + title.replace("\\", "\\\\").replace("\"", "\\\"") + "\"}"});
                 subtitleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(new Class[]{getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent")});
                 titlePacket = subtitleConstructor.newInstance(new Object[]{e, chatTitle});
                 sendPacket(player, titlePacket);
             }
-
+            
             if (subtitle != null)
             {
                 // Times packets
@@ -73,7 +73,7 @@ public final class TitleAPI {
                 subtitleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(new Class[]{getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"), Integer.TYPE, Integer.TYPE, Integer.TYPE});
                 subtitlePacket = subtitleConstructor.newInstance(new Object[]{e, chatSubtitle, fadeIn, stay, fadeOut});
                 sendPacket(player, subtitlePacket);
-
+                
                 e = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("SUBTITLE").get((Object) null);
                 chatSubtitle = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", new Class[]{String.class}).invoke((Object) null, new Object[]{"{\"text\":\"" + subtitle.replace("\\", "\\\\").replace("\"", "\\\"") + "\"}"});
                 subtitleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(new Class[]{getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"), Integer.TYPE, Integer.TYPE, Integer.TYPE});
@@ -86,7 +86,7 @@ public final class TitleAPI {
             var11.printStackTrace();
         }
     }
-
+    
     public static void sendActionBar(final Player player, final String text)
     {
         try
@@ -95,7 +95,7 @@ public final class TitleAPI {
             Object chatText;
             Constructor<?> subtitleConstructor;
             Object titlePacket;
-
+            
             if (text != null)
             {
                 e = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("ACTIONBAR").get((Object) null);
@@ -104,36 +104,36 @@ public final class TitleAPI {
                 titlePacket = subtitleConstructor.newInstance(new Object[]{e, chatText});
                 sendPacket(player, titlePacket);
             }
-
+            
         }
         catch (Exception var11)
         {
             var11.printStackTrace();
         }
     }
-
+    
     public static void clearActionBar(final Player player)
     {
         sendActionBar(player, "");
     }
-
+    
     public static void clearTitle(final Player player)
     {
         sendTitle(player, 0, 0, 0, "", "");
     }
-
+    
     public static void sendTabTitle(Player player, String header, String footer)
     {
         if (header == null) header = "";
         header = ChatColor.translateAlternateColorCodes('&', header);
-
+        
         if (footer == null) footer = "";
         footer = ChatColor.translateAlternateColorCodes('&', footer);
-
-
+        
+        
         header = header.replaceAll("%player%", player.getDisplayName());
         footer = footer.replaceAll("%player%", player.getDisplayName());
-
+        
         try
         {
             Object tabHeader = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\":\"" + header + "\"}");
@@ -150,5 +150,5 @@ public final class TitleAPI {
             ex.printStackTrace();
         }
     }
-
+    
 }

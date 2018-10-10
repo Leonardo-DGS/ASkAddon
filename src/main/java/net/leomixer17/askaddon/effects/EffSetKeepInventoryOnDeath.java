@@ -10,9 +10,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import javax.annotation.Nullable;
 
 public class EffSetKeepInventoryOnDeath extends Effect {
-
+    
     private Expression<Boolean> keepinv;
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
@@ -20,18 +20,18 @@ public class EffSetKeepInventoryOnDeath extends Effect {
         this.keepinv = (Expression<Boolean>) exprs[0];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event e, boolean arg1)
     {
         return null;
     }
-
+    
     @Override
     protected void execute(Event event)
     {
         if (event instanceof PlayerDeathEvent)
             ((PlayerDeathEvent) event).setKeepInventory(this.keepinv.getSingle(event));
     }
-
+    
 }

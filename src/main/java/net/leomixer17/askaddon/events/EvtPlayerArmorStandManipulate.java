@@ -9,23 +9,23 @@ import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
 import javax.annotation.Nullable;
 
 public class EvtPlayerArmorStandManipulate extends SkriptEvent {
-
+    
     @Override
     public String toString(@Nullable Event event, boolean arg1)
     {
         return null;
     }
-
+    
     @Override
     public boolean check(Event event)
     {
         return (event instanceof PlayerArmorStandManipulateEvent);
     }
-
+    
     @Override
     public boolean init(Literal<?>[] arg0, int i, ParseResult arg2)
     {
         return true;
     }
-
+    
 }

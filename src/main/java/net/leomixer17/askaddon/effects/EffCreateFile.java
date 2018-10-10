@@ -10,9 +10,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class EffCreateFile extends Effect {
-
+    
     private Expression<String> file;
-
+    
     @Override
     protected void execute(Event event)
     {
@@ -29,13 +29,13 @@ public class EffCreateFile extends Effect {
             }
         }
     }
-
+    
     @Override
     public String toString(Event event, boolean b)
     {
         return "create a file";
     }
-
+    
     @Override
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult)
@@ -43,5 +43,5 @@ public class EffCreateFile extends Effect {
         this.file = (Expression<String>) expressions[0];
         return true;
     }
-
+    
 }

@@ -11,21 +11,21 @@ import javax.annotation.Nullable;
 import java.io.File;
 
 public class EffDeleteWorld extends Effect {
-
+    
     private Expression<String> worldName;
-
+    
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] args, int arg1, Kleenean arg2, ParseResult arg3)
     {
         this.worldName = (Expression<String>) args[0];
         return true;
     }
-
+    
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return "delete a world";
     }
-
+    
     protected void execute(Event e)
     {
         if (worldName == null)
@@ -36,5 +36,5 @@ public class EffDeleteWorld extends Effect {
         if (f.exists())
             f.delete();
     }
-
+    
 }

@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Reflection {
-
+    
     public static Object newFromNMS(String nms)
     {
         try
@@ -19,7 +19,7 @@ public class Reflection {
             throw new RuntimeException(e);
         }
     }
-
+    
     public static Object newFromOBC(String obc)
     {
         try
@@ -31,7 +31,7 @@ public class Reflection {
             throw new RuntimeException(e);
         }
     }
-
+    
     @SuppressWarnings("rawtypes")
     public static Class nmsClass(String nms)
     {
@@ -44,7 +44,7 @@ public class Reflection {
             throw new RuntimeException(e);
         }
     }
-
+    
     @SuppressWarnings("rawtypes")
     public static Class obcClass(String obc)
     {
@@ -57,7 +57,7 @@ public class Reflection {
             throw new RuntimeException(e);
         }
     }
-
+    
     public static Object getHandle(Object obj)
     {
         try
@@ -70,7 +70,7 @@ public class Reflection {
         }
         return null;
     }
-
+    
     public static Field getField(Class<?> clazz, String name)
     {
         try
@@ -85,7 +85,7 @@ public class Reflection {
         }
         return null;
     }
-
+    
     public static Method getMethod(Class<?> clazz, String name, Class<?>[] args)
     {
         for (Method m : clazz.getMethods())
@@ -98,7 +98,7 @@ public class Reflection {
         }
         return null;
     }
-
+    
     public static boolean classesEqual(Class<?>[] l1, Class<?>[] l2)
     {
         boolean equal = true;
@@ -116,7 +116,7 @@ public class Reflection {
         }
         return equal;
     }
-
+    
     public static void sendPacket(Object packet, Player[] players)
     {
         try
@@ -135,12 +135,12 @@ public class Reflection {
             e.printStackTrace();
         }
     }
-
+    
     public static String getServerVersion()
     {
         return org.bukkit.Bukkit.getServer().getClass().getPackage().getName().replace(".", "@").split("@")[3];
     }
-
+    
     @SuppressWarnings("rawtypes")
     public static Class getCaller()
     {
@@ -153,5 +153,5 @@ public class Reflection {
         }
         return null;
     }
-
+    
 }

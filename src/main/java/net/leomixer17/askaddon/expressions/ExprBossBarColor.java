@@ -9,14 +9,14 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.event.Event;
 
 public class ExprBossBarColor extends SimplePropertyExpression<BossBar, BarColor> {
-
+    
     public BarColor convert(BossBar bar)
     {
         if (bar == null)
             return null;
         return bar.getColor();
     }
-
+    
     public void change(Event e, Object[] delta, ChangeMode mode)
     {
         BossBar bar = (BossBar) getExpr().getSingle(e);
@@ -26,7 +26,7 @@ public class ExprBossBarColor extends SimplePropertyExpression<BossBar, BarColor
         if (mode == Changer.ChangeMode.SET)
             bar.setColor(b);
     }
-
+    
     public Class<?>[] acceptChange(ChangeMode mode)
     {
         if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[]{
@@ -34,15 +34,15 @@ public class ExprBossBarColor extends SimplePropertyExpression<BossBar, BarColor
         });
         return null;
     }
-
+    
     public Class<? extends BarColor> getReturnType()
     {
         return BarColor.class;
     }
-
+    
     protected String getPropertyName()
     {
         return "color of boss bar";
     }
-
+    
 }

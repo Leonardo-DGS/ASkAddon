@@ -9,10 +9,10 @@ import net.leomixer17.askaddon.utils.JSONMessage;
 import org.bukkit.event.Event;
 
 public class ExprJsonMessageTooltip extends SimpleExpression<JSONMessage> {
-
+    
     private Expression<JSONMessage> json;
     private Expression<String> append;
-
+    
     protected JSONMessage[] get(Event event)
     {
         JSONMessage j = (JSONMessage) this.json.getSingle(event);
@@ -25,22 +25,22 @@ public class ExprJsonMessageTooltip extends SimpleExpression<JSONMessage> {
                 })
         });
     }
-
+    
     public boolean isSingle()
     {
         return true;
     }
-
+    
     public Class<? extends JSONMessage> getReturnType()
     {
         return JSONMessage.class;
     }
-
+    
     public String toString(Event event, boolean b)
     {
         return ((JSONMessage) this.json.getSingle(event)).toOldMessageFormat();
     }
-
+    
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
@@ -48,5 +48,5 @@ public class ExprJsonMessageTooltip extends SimpleExpression<JSONMessage> {
         this.append = (Expression<String>) exprs[1];
         return true;
     }
-
+    
 }

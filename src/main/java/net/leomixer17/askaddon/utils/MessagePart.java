@@ -4,7 +4,7 @@ import com.google.gson.stream.JsonWriter;
 import org.bukkit.ChatColor;
 
 final class MessagePart {
-
+    
     ChatColor color = ChatColor.WHITE;
     ChatColor[] styles = new ChatColor[0];
     String clickActionName = null;
@@ -12,12 +12,12 @@ final class MessagePart {
     String hoverActionName = null;
     String hoverActionData = null;
     final String text;
-
+    
     MessagePart(String text)
     {
         this.text = text;
     }
-
+    
     JsonWriter writeJson(JsonWriter json)
     {
         try
@@ -38,5 +38,5 @@ final class MessagePart {
         }
         return json;
     }
-
+    
 }

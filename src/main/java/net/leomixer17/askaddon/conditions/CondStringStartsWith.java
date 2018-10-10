@@ -8,11 +8,11 @@ import org.bukkit.event.Event;
 import org.eclipse.jdt.annotation.Nullable;
 
 public class CondStringStartsWith extends Condition {
-
+    
     private Expression<String> stringToCheck;
     private Expression<String> stringstartswith;
     private boolean b;
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
@@ -22,13 +22,13 @@ public class CondStringStartsWith extends Condition {
         this.b = i == 0;
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event e, boolean arg1)
     {
         return "string starts with another string";
     }
-
+    
     @Override
     public boolean check(Event e)
     {
@@ -36,5 +36,5 @@ public class CondStringStartsWith extends Condition {
             return stringToCheck.getSingle(e).startsWith(stringstartswith.getSingle(e));
         return !stringToCheck.getSingle(e).startsWith(stringstartswith.getSingle(e));
     }
-
+    
 }

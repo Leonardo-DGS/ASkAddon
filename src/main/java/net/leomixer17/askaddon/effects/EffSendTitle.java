@@ -12,14 +12,14 @@ import org.bukkit.event.Event;
 import javax.annotation.Nullable;
 
 public class EffSendTitle extends Effect {
-
+    
     private Expression<String> Title;
     private Expression<String> subTitle;
     private Expression<Player> Player;
     private Expression<Timespan> time;
     private Expression<Timespan> fadeIn;
     private Expression<Timespan> fadeOut;
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parse)
@@ -32,13 +32,13 @@ public class EffSendTitle extends Effect {
         this.Player = (Expression<Player>) exprs[5];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event e, boolean arg1)
     {
         return "send title";
     }
-
+    
     @Override
     protected void execute(Event event)
     {
@@ -51,7 +51,7 @@ public class EffSendTitle extends Effect {
             fadeInTicks = (int) this.fadeIn.getSingle(event).getTicks_i();
         if (this.fadeOut != null)
             fadeOutTicks = (int) this.fadeOut.getSingle(event).getTicks_i();
-
+        
         for (final Player p : this.Player.getAll(event))
         {
             if (this.Title != null && this.subTitle != null)
@@ -62,5 +62,5 @@ public class EffSendTitle extends Effect {
                 TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, null, this.subTitle.getSingle(event));
         }
     }
-
+    
 }

@@ -10,10 +10,10 @@ import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 
 public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
-
+    
     private Expression<JSONMessage> json;
     private Expression<ItemStack> item;
-
+    
     protected JSONMessage[] get(Event event)
     {
         JSONMessage j = (JSONMessage) this.json.getSingle(event);
@@ -23,22 +23,22 @@ public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
                 j.itemTooltip(a)
         });
     }
-
+    
     public boolean isSingle()
     {
         return true;
     }
-
+    
     public Class<? extends JSONMessage> getReturnType()
     {
         return JSONMessage.class;
     }
-
+    
     public String toString(Event event, boolean b)
     {
         return ((JSONMessage) this.json.getSingle(event)).toOldMessageFormat();
     }
-
+    
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
@@ -46,5 +46,5 @@ public class ExprJsonMessageItem extends SimpleExpression<JSONMessage> {
         this.item = (Expression<ItemStack>) exprs[1];
         return true;
     }
-
+    
 }

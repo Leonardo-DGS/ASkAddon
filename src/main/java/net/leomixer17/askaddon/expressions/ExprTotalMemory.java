@@ -7,7 +7,7 @@ import ch.njol.util.Kleenean;
 import org.bukkit.event.Event;
 
 public class ExprTotalMemory extends SimpleExpression<Integer> {
-
+    
     protected Integer[] get(Event event)
     {
         long l = Runtime.getRuntime().totalMemory();
@@ -17,25 +17,25 @@ public class ExprTotalMemory extends SimpleExpression<Integer> {
                 i
         };
     }
-
+    
     public boolean isSingle()
     {
         return true;
     }
-
+    
     public Class<? extends Integer> getReturnType()
     {
         return Integer.class;
     }
-
+    
     public String toString(Event event, boolean b)
     {
         return this.getClass().getName();
     }
-
+    
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult)
     {
         return true;
     }
-
+    
 }

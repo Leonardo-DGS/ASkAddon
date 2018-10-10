@@ -12,21 +12,21 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nullable;
 
 public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
-
+    
     private Expression<Block> block;
     private Expression<ItemStack> item;
     private boolean b;
-
+    
     public Class<? extends ItemStack> getReturnType()
     {
         return ItemStack.class;
     }
-
+    
     public boolean isSingle()
     {
         return true;
     }
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
@@ -36,13 +36,13 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
         if (i == 1) this.item = (Expression<ItemStack>) exprs[1];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return "drops of a block";
     }
-
+    
     @Override
     @Nullable
     protected ItemStack[] get(Event event)
@@ -93,5 +93,5 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 		return (Class[]) CollectionUtils.array(new Class[] { ItemStack.class });
 	}
 	*/
-
+ 
 }

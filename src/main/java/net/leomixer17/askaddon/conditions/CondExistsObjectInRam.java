@@ -10,9 +10,9 @@ import org.eclipse.jdt.annotation.Nullable;
 
 
 public class CondExistsObjectInRam extends Condition {
-
+    
     private Expression<String> name;
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean k, ParseResult result)
@@ -20,17 +20,17 @@ public class CondExistsObjectInRam extends Condition {
         this.name = (Expression<String>) exprs[0];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event e, boolean b)
     {
         return "exists object in ram";
     }
-
+    
     @Override
     public boolean check(Event e)
     {
         return ASkAddon.objects.containsKey(this.name.getSingle(e));
     }
-
+    
 }

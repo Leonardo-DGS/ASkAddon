@@ -12,22 +12,22 @@ import org.bukkit.event.Event;
 import javax.annotation.Nullable;
 
 public class ExprLoadedChunks extends SimpleExpression<Chunk> {
-
+    
     private Expression<World> world;
     private boolean b;
-
+    
     @Override
     public Class<? extends Chunk> getReturnType()
     {
         return Chunk.class;
     }
-
+    
     @Override
     public boolean isSingle()
     {
         return true;
     }
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] args, int i, Kleenean arg2, ParseResult arg3)
@@ -37,13 +37,13 @@ public class ExprLoadedChunks extends SimpleExpression<Chunk> {
             this.world = (Expression<World>) args[0];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return "all chunks";
     }
-
+    
     @Override
     @Nullable
     protected Chunk[] get(Event e)
@@ -64,5 +64,5 @@ public class ExprLoadedChunks extends SimpleExpression<Chunk> {
             }
         return chunks;
     }
-
+    
 }

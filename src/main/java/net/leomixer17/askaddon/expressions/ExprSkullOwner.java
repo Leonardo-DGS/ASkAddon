@@ -14,21 +14,21 @@ import org.bukkit.inventory.meta.SkullMeta;
 import javax.annotation.Nullable;
 
 public class ExprSkullOwner extends SimpleExpression<String> {
-
+    
     private Expression<ItemStack> skull;
-
+    
     @Override
     public Class<String> getReturnType()
     {
         return String.class;
     }
-
+    
     @Override
     public boolean isSingle()
     {
         return true;
     }
-
+    
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int arg1, Kleenean arg2, ParseResult arg3)
@@ -36,13 +36,13 @@ public class ExprSkullOwner extends SimpleExpression<String> {
         this.skull = (Expression<ItemStack>) exprs[0];
         return true;
     }
-
+    
     @Override
     public String toString(@Nullable Event event, boolean arg1)
     {
         return "skull owner";
     }
-
+    
     @SuppressWarnings("deprecation")
     @Override
     @Nullable
@@ -52,7 +52,7 @@ public class ExprSkullOwner extends SimpleExpression<String> {
             return new String[]{((SkullMeta) this.skull.getSingle(e).getItemMeta()).getOwner()};
         return null;
     }
-
+    
     @SuppressWarnings("deprecation")
     public void change(Event e, Object[] delta, ChangeMode mode)
     {
@@ -63,10 +63,10 @@ public class ExprSkullOwner extends SimpleExpression<String> {
             this.skull.getSingle(e).setItemMeta(meta);
         }
     }
-
+    
     public Class<?>[] acceptChange(ChangeMode mode)
     {
         return (Class[]) CollectionUtils.array(new Class[]{String.class});
     }
-
+    
 }

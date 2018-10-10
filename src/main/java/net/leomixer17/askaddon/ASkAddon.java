@@ -27,14 +27,14 @@ import java.util.HashMap;
 import static ch.njol.skript.Skript.*;
 
 public final class ASkAddon extends JavaPlugin {
-
+    
     public static final HashMap<String, Object> objects = new HashMap<>();
-
+    
     @Override
     public void onEnable()
     {
         Skript.registerAddon(this);
-
+        
         // Events
         registerEvent("player changed world", EvtPlayerChangeWorld.class, PlayerChangedWorldEvent.class, "player change[d] world");
         if (!Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].startsWith("v1_8_R"))
@@ -47,7 +47,7 @@ public final class ASkAddon extends JavaPlugin {
         registerEvent("player shear entity", EvtPlayerShearEntity.class, PlayerShearEntityEvent.class, "player shear entity");
         registerEvent("player velocity", EvtPlayerVelocity.class, PlayerVelocityEvent.class, "player [change] velocity");
         registerEvent("player armor stand manipulate", EvtPlayerArmorStandManipulate.class, PlayerArmorStandManipulateEvent.class, "player armor stand manipulate");
-
+        
         // Effects
         registerEffect(EffSendTitle.class, "send title %string% [with subtitle %-string%] [for %-timespan%] [with %-timespan% fade in] [with %-timespan% fade out] to %player%");
         registerEffect(EffSendActionBar.class, new String[]{"(send|show) [a[n]] action[ ]bar [(with|from)] [string] %string% to %players%", "set action[ ]bar of %players% to %string%"});
@@ -56,7 +56,7 @@ public final class ASkAddon extends JavaPlugin {
         registerEffect(EffSetKeepInventoryOnDeath.class, "set keep inventory to %boolean%");
         registerEffect(EffSetKeepXPOnDeath.class, "set keep (xp|level) to %boolean%");
         registerEffect(EffSendJson.class, "send %jsonmessage% to %player%");
-
+        
         if (!Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].startsWith("v1_8_R"))
         {
             registerEffect(EffShowBossBar.class, "show[ boss[ ]bar] %bossbar%");
@@ -67,7 +67,7 @@ public final class ASkAddon extends JavaPlugin {
             registerEffect(EffRemoveFlagFromBossBar.class, "remove flag %flag% from[ boss][ ][bar] %bossbar%");
             registerEffect(EffRemovePlayerFromBossBar.class, "remove player %player% from[ boss][ ][bar] %bossbar%");
         }
-
+        
         registerEffect(EffCreateFile.class, "create[ (a|the)] file %string%");
         registerEffect(EffDeleteFile.class, "delete[ the] file %string%");
         registerEffect(EffRequestGarbageCollector.class, "[(request|do|make)[ a] ]garbage collect[or]");
@@ -79,7 +79,7 @@ public final class ASkAddon extends JavaPlugin {
         registerEffect(EffDeleteObjectInRam.class, new String[]{"delete object[ with name] %string%[ saved] in ram", "delete all object[s][ saved] in ram"});
         registerEffect(EffSetCursorItem.class, "set cursor item to %itemstack%");
         registerEffect(EffSetClickedItem.class, "set clicked item to %itemstack%");
-
+        
         // Expressions
         registerExpression(ExprInventoryName.class, String.class, ExpressionType.SIMPLE, new String[]{"(name of inventory|inventory's name)", "name of[ inventory] %inventory%"});
         registerExpression(ExprJsonMessage.class, JSONMessage.class, ExpressionType.SIMPLE, "json[ message][ (of|from)] %string%");
@@ -88,7 +88,7 @@ public final class ASkAddon extends JavaPlugin {
         registerExpression(ExprJsonMessageTooltip.class, JSONMessage.class, ExpressionType.SIMPLE, "%jsonmessage% tooltip %string%");
         registerExpression(ExprJsonMessageItem.class, JSONMessage.class, ExpressionType.SIMPLE, "%jsonmessage% (item[ ]tooltip|tooltip[ ]item) %itemstack%");
         registerExpression(ExprJsonAppend.class, JSONMessage.class, ExpressionType.SIMPLE, "%jsonmessage% (then|append) %string%");
-
+        
         if (!Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].startsWith("v1_8_R"))
         {
             registerExpression(ExprNewBossBar.class, BossBar.class, ExpressionType.SIMPLE, "new boss[ ]bar");
@@ -101,7 +101,7 @@ public final class ASkAddon extends JavaPlugin {
             registerExpression(ExprSerialiseBossBar.class, String.class, ExpressionType.SIMPLE, "seriali(z|s)ed [(contents|data)][ of][ boss][ ][bar] %bossbar%");
             registerExpression(ExprBossBarFromSerialised.class, BossBar.class, ExpressionType.SIMPLE, "boss[ ]bar from data %string%");
         }
-
+        
         registerExpression(ExprDropsOfBlock.class, ItemStack.class, ExpressionType.SIMPLE, new String[]{"drops of[ block] %block%", "drops of[ block] %block% with[ item] %itemstack%"});
         registerExpression(ExprSkullOwner.class, String.class, ExpressionType.SIMPLE, "[the ]skull owner of %itemstack%");
         registerExpression(ExprGetObjectInRam.class, Object.class, ExpressionType.SIMPLE, "object[ with name] %string%[ saved] in ram");
@@ -116,19 +116,19 @@ public final class ASkAddon extends JavaPlugin {
         // PlaceholderAPI
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null && Bukkit.getPluginManager().getPlugin("PlaceholderAPI") instanceof PlaceholderAPIPlugin)
             registerExpression(ExprPlaceholderAPIPlaceholders.class, String.class, ExpressionType.SIMPLE, "placeholderapi [parse[d]] place[ ]holder[s] [(from|with)] %string% [[(from|for|of)] %-player%]");
-
+        
         // Conditions
         registerCondition(CondStringStartsWith.class, new String[]{"%string% start[s][ with] %string%", "%string% (doesn't|don't|not) start[s][ with] %string%"});
         registerCondition(CondStringEndsWith.class, new String[]{"%string% end[s][ with] %string%", "%string% (doesn't|don't|not) start[s][ with] %string%"});
         registerCondition(CondHasPotionEffect.class, "[player] %player% has [potion] effect [type] [of] %potioneffecttype%");
         registerCondition(CondFileExists.class, "file %string% exists");
         registerCondition(CondExistsObjectInRam.class, "exists object [with name] %string% [saved] in ram");
-
+        
         // Classes
         Classes.registerClass(new ClassInfo<>(JSONMessage.class, "jsonmessage"));
         if (!Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].startsWith("v1_8_R"))
             Classes.registerClass(new ClassInfo<>(BossBar.class, "bossbar"));
-
+        
         // Enums
         if (!Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].startsWith("v1_8_R"))
         {
@@ -137,5 +137,5 @@ public final class ASkAddon extends JavaPlugin {
             EnumRegister.registerEnum(BarStyle.class, "barstyle");
         }
     }
-
+    
 }

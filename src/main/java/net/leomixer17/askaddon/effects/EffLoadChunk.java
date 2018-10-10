@@ -12,29 +12,29 @@ import org.bukkit.event.world.ChunkLoadEvent;
 import javax.annotation.Nullable;
 
 public class EffLoadChunk extends Effect {
-	
-	private Expression<Chunk> chunk;
-	
-	@SuppressWarnings("unchecked")
-	@Override
-	public boolean init(Expression<?>[] exprs, int arg1, Kleenean arg2, ParseResult arg3)
-	{
-		this.chunk = (Expression<Chunk>) exprs[0];
-		return true;
-	}
-	
-	@Override
-	public String toString(@Nullable Event arg0, boolean arg1)
-	{
-		return "load chunk";
-	}
-	
-	@Override
-	protected void execute(Event e)
-	{
-		final ChunkLoadEvent event = new ChunkLoadEvent(this.chunk.getSingle(e), false);
-		Bukkit.getPluginManager().callEvent(event);
-		this.chunk.getSingle(e).load(false);
-	}
-	
+    
+    private Expression<Chunk> chunk;
+    
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean init(Expression<?>[] exprs, int arg1, Kleenean arg2, ParseResult arg3)
+    {
+        this.chunk = (Expression<Chunk>) exprs[0];
+        return true;
+    }
+    
+    @Override
+    public String toString(@Nullable Event arg0, boolean arg1)
+    {
+        return "load chunk";
+    }
+    
+    @Override
+    protected void execute(Event e)
+    {
+        final ChunkLoadEvent event = new ChunkLoadEvent(this.chunk.getSingle(e), false);
+        Bukkit.getPluginManager().callEvent(event);
+        this.chunk.getSingle(e).load(false);
+    }
+    
 }

@@ -12,57 +12,57 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nullable;
 
 public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
-	
-	private Expression<Block> block;
-	private Expression<ItemStack> item;
-	private boolean b;
-	
-	public Class<? extends ItemStack> getReturnType()
-	{
-		return ItemStack.class;
-	}
-	
-	public boolean isSingle()
-	{
-		return true;
-	}
-	
-	@SuppressWarnings("unchecked")
-	@Override
-	public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
-	{
-		this.block = (Expression<Block>) exprs[0];
-		this.b = i == 1;
-		if (i == 1) this.item = (Expression<ItemStack>) exprs[1];
-		return true;
-	}
-	
-	@Override
-	public String toString(@Nullable Event arg0, boolean arg1)
-	{
-		return "drops of a block";
-	}
-	
-	@Override
-	@Nullable
-	protected ItemStack[] get(Event event)
-	{
-		ItemStack[] items = new ItemStack[((BlockEvent) event).getBlock().getDrops().size()];
-		int i = 0;
-		if (!b)
-			for (ItemStack is : this.block.getSingle(event).getDrops())
-			{
-				items[i] = is;
-				i++;
-			}
-		else
-			for (ItemStack is : this.block.getSingle(event).getDrops(this.item.getSingle(event)))
-			{
-				items[i] = is;
-				i++;
-			}
-		return items;
-	}
+
+    private Expression<Block> block;
+    private Expression<ItemStack> item;
+    private boolean b;
+
+    public Class<? extends ItemStack> getReturnType()
+    {
+        return ItemStack.class;
+    }
+
+    public boolean isSingle()
+    {
+        return true;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
+    {
+        this.block = (Expression<Block>) exprs[0];
+        this.b = i == 1;
+        if (i == 1) this.item = (Expression<ItemStack>) exprs[1];
+        return true;
+    }
+
+    @Override
+    public String toString(@Nullable Event arg0, boolean arg1)
+    {
+        return "drops of a block";
+    }
+
+    @Override
+    @Nullable
+    protected ItemStack[] get(Event event)
+    {
+        ItemStack[] items = new ItemStack[((BlockEvent) event).getBlock().getDrops().size()];
+        int i = 0;
+        if (!b)
+            for (ItemStack is : this.block.getSingle(event).getDrops())
+            {
+                items[i] = is;
+                i++;
+            }
+        else
+            for (ItemStack is : this.block.getSingle(event).getDrops(this.item.getSingle(event)))
+            {
+                items[i] = is;
+                i++;
+            }
+        return items;
+    }
 	
 	/*
 	public void change(Event e, Object[] delta, Changer.ChangeMode mode)
@@ -93,5 +93,5 @@ public class ExprDropsOfBlock extends SimpleExpression<ItemStack> {
 		return (Class[]) CollectionUtils.array(new Class[] { ItemStack.class });
 	}
 	*/
-	
+
 }

@@ -10,26 +10,26 @@ import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
 
 public class EffAddFlagToBar extends Effect implements Listener {
-	
-	private Expression<BossBar> bar;
-	private Expression<BarFlag> flag;
-	
-	protected void execute(Event event)
-	{
-		((BossBar) this.bar.getSingle(event)).addFlag((BarFlag) this.flag.getSingle(event));
-	}
-	
-	public String toString(Event event, boolean b)
-	{
-		return "Add Flag to Boss Bar";
-	}
-	
-	@SuppressWarnings("unchecked")
-	public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
-	{
-		this.bar = (Expression<BossBar>) exprs[1];
-		this.flag = (Expression<BarFlag>) exprs[0];
-		return true;
-	}
-	
+
+    private Expression<BossBar> bar;
+    private Expression<BarFlag> flag;
+
+    protected void execute(Event event)
+    {
+        ((BossBar) this.bar.getSingle(event)).addFlag((BarFlag) this.flag.getSingle(event));
+    }
+
+    public String toString(Event event, boolean b)
+    {
+        return "Add Flag to Boss Bar";
+    }
+
+    @SuppressWarnings("unchecked")
+    public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
+    {
+        this.bar = (Expression<BossBar>) exprs[1];
+        this.flag = (Expression<BarFlag>) exprs[0];
+        return true;
+    }
+
 }

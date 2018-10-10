@@ -9,23 +9,23 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import javax.annotation.Nullable;
 
 public class EvtPlayerChangeWorld extends SkriptEvent {
-	
-	@Override
-	public String toString(@Nullable Event event, boolean arg1)
-	{
-		return "PlayerChangedWorldEvent";
-	}
-	
-	@Override
-	public boolean check(Event event)
-	{
-		return event instanceof PlayerChangedWorldEvent;
-	}
-	
-	@Override
-	public boolean init(Literal<?>[] lit, int i, ParseResult parse)
-	{
-		return true;
-	}
-	
+
+    @Override
+    public String toString(@Nullable Event event, boolean arg1)
+    {
+        return "PlayerChangedWorldEvent";
+    }
+
+    @Override
+    public boolean check(Event event)
+    {
+        return event instanceof PlayerChangedWorldEvent;
+    }
+
+    @Override
+    public boolean init(Literal<?>[] lit, int i, ParseResult parse)
+    {
+        return true;
+    }
+
 }

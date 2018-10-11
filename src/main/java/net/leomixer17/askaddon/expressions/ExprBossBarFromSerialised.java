@@ -9,9 +9,9 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.event.Event;
 
 public class ExprBossBarFromSerialised extends SimpleExpression<BossBar> {
-    
+
     private Expression<String> data;
-    
+
     protected BossBar[] get(Event event)
     {
         Gson gson = new Gson();
@@ -20,27 +20,27 @@ public class ExprBossBarFromSerialised extends SimpleExpression<BossBar> {
                 bar
         };
     }
-    
+
     public boolean isSingle()
     {
         return true;
     }
-    
+
     public Class<? extends BossBar> getReturnType()
     {
         return BossBar.class;
     }
-    
+
     public String toString(Event event, boolean b)
     {
         return "unserialise boss bar";
     }
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
         this.data = (Expression<String>) exprs[0];
         return true;
     }
-    
+
 }

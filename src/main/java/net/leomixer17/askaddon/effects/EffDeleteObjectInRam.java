@@ -10,10 +10,10 @@ import org.bukkit.event.Event;
 import javax.annotation.Nullable;
 
 public class EffDeleteObjectInRam extends Effect {
-    
+
     private Expression<String> s;
     private int a;
-    
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
@@ -23,13 +23,13 @@ public class EffDeleteObjectInRam extends Effect {
         this.a = i;
         return true;
     }
-    
+
     @Override
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return "delete object in ram";
     }
-    
+
     @Override
     protected void execute(Event e)
     {
@@ -38,5 +38,5 @@ public class EffDeleteObjectInRam extends Effect {
         else
             ASkAddon.objects.clear();
     }
-    
+
 }

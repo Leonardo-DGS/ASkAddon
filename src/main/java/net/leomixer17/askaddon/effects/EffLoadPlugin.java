@@ -14,9 +14,9 @@ import javax.annotation.Nullable;
 import java.io.File;
 
 public class EffLoadPlugin extends Effect {
-    
+
     private Expression<String> plugin;
-    
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int arg1, Kleenean arg2, ParseResult arg3)
@@ -24,13 +24,13 @@ public class EffLoadPlugin extends Effect {
         this.plugin = (Expression<String>) exprs[0];
         return false;
     }
-    
+
     @Override
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return null;
     }
-    
+
     @Override
     protected void execute(Event e)
     {
@@ -43,5 +43,5 @@ public class EffLoadPlugin extends Effect {
             e1.printStackTrace();
         }
     }
-    
+
 }

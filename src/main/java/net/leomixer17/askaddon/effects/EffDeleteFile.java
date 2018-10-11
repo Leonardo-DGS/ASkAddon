@@ -10,9 +10,9 @@ import javax.annotation.Nullable;
 import java.io.File;
 
 public class EffDeleteFile extends Effect {
-    
+
     private Expression<String> fname;
-    
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int arg1, Kleenean arg2, ParseResult arg3)
@@ -20,13 +20,13 @@ public class EffDeleteFile extends Effect {
         this.fname = (Expression<String>) exprs[0];
         return true;
     }
-    
+
     @Override
     public String toString(@Nullable Event arg0, boolean arg1)
     {
         return "delete file";
     }
-    
+
     @Override
     protected void execute(Event e)
     {
@@ -34,5 +34,5 @@ public class EffDeleteFile extends Effect {
         if (f.exists())
             f.delete();
     }
-    
+
 }

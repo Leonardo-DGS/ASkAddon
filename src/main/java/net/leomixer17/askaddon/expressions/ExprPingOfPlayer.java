@@ -9,12 +9,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 
 public class ExprPingOfPlayer extends SimpleExpression<Integer> {
-    
+
     private static final String packageName = Bukkit.getServer().getClass().getPackage().getName();
     private static final String version = packageName.substring(packageName.lastIndexOf(".") + 1);
-    
+
     private Expression<Player> player;
-    
+
     protected Integer[] get(Event event)
     {
         Player p = this.player.getSingle(event);
@@ -38,27 +38,27 @@ public class ExprPingOfPlayer extends SimpleExpression<Integer> {
                 null
         };
     }
-    
+
     public boolean isSingle()
     {
         return true;
     }
-    
+
     public Class<? extends Integer> getReturnType()
     {
         return Integer.class;
     }
-    
+
     public String toString(Event event, boolean b)
     {
         return this.getClass().getName();
     }
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, ParseResult parseResult)
     {
         this.player = (Expression<Player>) expressions[0];
         return true;
     }
-    
+
 }

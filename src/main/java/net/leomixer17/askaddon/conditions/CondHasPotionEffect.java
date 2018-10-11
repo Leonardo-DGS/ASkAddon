@@ -10,11 +10,11 @@ import org.bukkit.potion.PotionEffectType;
 import org.eclipse.jdt.annotation.Nullable;
 
 public class CondHasPotionEffect extends Condition {
-    
+
     private Expression<Player> player;
     private Expression<PotionEffectType> effect;
     private boolean b;
-    
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
@@ -24,17 +24,17 @@ public class CondHasPotionEffect extends Condition {
         this.b = i == 0;
         return true;
     }
-    
+
     @Override
     public String toString(@Nullable Event e, boolean arg1)
     {
         return "player has potion effect";
     }
-    
+
     @Override
     public boolean check(Event e)
     {
         return this.b ? this.player.getSingle(e).hasPotionEffect(this.effect.getSingle(e)) : !this.player.getSingle(e).hasPotionEffect(this.effect.getSingle(e));
     }
-    
+
 }

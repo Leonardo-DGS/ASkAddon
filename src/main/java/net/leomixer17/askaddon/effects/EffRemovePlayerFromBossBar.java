@@ -10,20 +10,20 @@ import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
 
 public class EffRemovePlayerFromBossBar extends Effect implements Listener {
-    
+
     private Expression<BossBar> bar;
     private Expression<Player> player;
-    
+
     protected void execute(Event event)
     {
         (this.bar.getSingle(event)).removePlayer(this.player.getSingle(event));
     }
-    
+
     public String toString(Event event, boolean b)
     {
         return "Remove Player from Boss Bar";
     }
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
@@ -31,5 +31,5 @@ public class EffRemovePlayerFromBossBar extends Effect implements Listener {
         this.player = (Expression<Player>) exprs[0];
         return true;
     }
-    
+
 }

@@ -12,7 +12,7 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.event.Event;
 
 public class ExprNewBossBar extends SimpleExpression<BossBar> {
-    
+
     protected BossBar[] get(Event event)
     {
         BossBar bar = Bukkit.createBossBar("Default Title", BarColor.GREEN, BarStyle.SEGMENTED_20, new BarFlag[0]);
@@ -20,26 +20,26 @@ public class ExprNewBossBar extends SimpleExpression<BossBar> {
                 bar
         };
     }
-    
+
     public boolean isSingle()
     {
         return true;
     }
-    
+
     public Class<? extends BossBar> getReturnType()
     {
         return BossBar.class;
     }
-    
+
     public String toString(Event event, boolean b)
     {
         return "new boss bar";
     }
-    
+
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
         return true;
     }
-    
+
 }

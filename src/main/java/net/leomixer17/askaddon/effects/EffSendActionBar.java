@@ -11,10 +11,10 @@ import org.bukkit.event.Event;
 import javax.annotation.Nullable;
 
 public class EffSendActionBar extends Effect {
-    
+
     private Expression<Player> player;
     private Expression<String> text;
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, SkriptParser.ParseResult arg3)
     {
@@ -30,16 +30,16 @@ public class EffSendActionBar extends Effect {
         }
         return true;
     }
-    
+
     public String toString(@Nullable Event e, boolean arg1)
     {
         return null;
     }
-    
+
     protected void execute(Event e)
     {
         for (Player player : this.player.getAll(e))
             TitleAPI.sendActionBar(player, this.text.getSingle(e));
     }
-    
+
 }

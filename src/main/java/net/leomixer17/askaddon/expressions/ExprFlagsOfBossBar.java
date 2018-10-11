@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
-    
+
     Expression<BossBar> bar;
-    
+
     protected BarFlag[] get(Event event)
     {
         List<BarFlag> flags = new ArrayList<BarFlag>();
@@ -24,27 +24,27 @@ public class ExprFlagsOfBossBar extends SimpleExpression<BarFlag> {
                 flags.add(barFlag);
         return (BarFlag[]) flags.toArray(new BarFlag[flags.size()]);
     }
-    
+
     public boolean isSingle()
     {
         return false;
     }
-    
+
     public Class<? extends BarFlag> getReturnType()
     {
         return BarFlag.class;
     }
-    
+
     public String toString(Event event, boolean b)
     {
         return "flags of boss bar";
     }
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parseResult)
     {
         this.bar = (Expression<BossBar>) exprs[0];
         return true;
     }
-    
+
 }

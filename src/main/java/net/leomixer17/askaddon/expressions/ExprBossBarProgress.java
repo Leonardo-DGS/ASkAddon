@@ -8,14 +8,14 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.event.Event;
 
 public class ExprBossBarProgress extends SimplePropertyExpression<BossBar, Number> {
-    
+
     public Number convert(BossBar bar)
     {
         if (bar == null)
             return null;
         return Double.valueOf(bar.getProgress());
     }
-    
+
     public void change(Event event, Object[] delta, ChangeMode mode)
     {
         BossBar bar = (BossBar) getExpr().getSingle(event);
@@ -25,7 +25,7 @@ public class ExprBossBarProgress extends SimplePropertyExpression<BossBar, Numbe
         if (mode == Changer.ChangeMode.SET)
             bar.setProgress(b.doubleValue());
     }
-    
+
     public Class<?>[] acceptChange(ChangeMode mode)
     {
         if (mode == Changer.ChangeMode.SET) return (Class[]) CollectionUtils.array(new Class[]{
@@ -33,15 +33,15 @@ public class ExprBossBarProgress extends SimplePropertyExpression<BossBar, Numbe
         });
         return null;
     }
-    
+
     public Class<? extends Number> getReturnType()
     {
         return Number.class;
     }
-    
+
     protected String getPropertyName()
     {
         return "title of boss bar";
     }
-    
+
 }

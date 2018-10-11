@@ -11,21 +11,21 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nullable;
 
 public class EffSetCursorItem extends Effect {
-    
+
     private Expression<ItemStack> item;
-    
+
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int i, Kleenean kleenean, ParseResult parse)
     {
         this.item = (Expression<ItemStack>) exprs[0];
         return true;
     }
-    
+
     public String toString(@Nullable Event event, boolean arg1)
     {
         return "set cursor item";
     }
-    
+
     protected void execute(Event event)
     {
         if (!(event instanceof InventoryClickEvent))
@@ -38,5 +38,5 @@ public class EffSetCursorItem extends Effect {
         ((InventoryClickEvent) event).getCursor().setData(itemTobe.getData());
         ((InventoryClickEvent) event).getCursor().setDurability(itemTobe.getDurability());
     }
-    
+
 }

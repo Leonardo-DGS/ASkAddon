@@ -11,21 +11,21 @@ import org.bukkit.inventory.Inventory;
 import javax.annotation.Nullable;
 
 public class ExprInventoryName extends SimpleExpression<String> {
-    
+
     private Expression<Inventory> inventory = null;
-    
+
     @Override
     public Class<? extends String> getReturnType()
     {
         return String.class;
     }
-    
+
     @Override
     public boolean isSingle()
     {
         return true;
     }
-    
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exprs, int i, Kleenean arg2, ParseResult arg3)
@@ -34,13 +34,13 @@ public class ExprInventoryName extends SimpleExpression<String> {
             this.inventory = (Expression<Inventory>) exprs[0];
         return true;
     }
-    
+
     @Override
     public String toString(@Nullable Event event, boolean arg1)
     {
         return "inventory name";
     }
-    
+
     @Override
     @Nullable
     protected String[] get(Event event)
@@ -51,5 +51,5 @@ public class ExprInventoryName extends SimpleExpression<String> {
             return new String[]{((InventoryClickEvent) event).getClickedInventory().getName()};
         return null;
     }
-    
+
 }

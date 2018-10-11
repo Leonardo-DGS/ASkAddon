@@ -9,47 +9,47 @@ import java.util.Collection;
 import java.util.Scanner;
 
 public class Collect {
-    
+
     public static String[] toStringArray(Object[] array)
     {
         String[] strings = new String[array.length];
         for (int i = 0; i < strings.length; i++) strings[i] = array[i].toString();
         return strings;
     }
-    
+
     public static String[] toFriendlyStringArray(Object[] array)
     {
         String[] strings = new String[array.length];
         for (int i = 0; i < strings.length; i++) strings[i] = array[i].toString().toLowerCase().replace("_", " ");
         return strings;
     }
-    
+
     public static <T> T[] asArray(T[] objects)
     {
         return objects;
     }
-    
+
     @SuppressWarnings("unchecked")
     public static <T> T[] newArray(Class<?> type, int size)
     {
         return (T[]) Array.newInstance(type, size);
     }
-    
+
     public static String[] asSkriptProperty(String property, String fromType)
     {
         return (String[]) asArray(new String[]{new StringBuilder().append("[the] ").append(property).append(" of %").append(fromType).append("%").toString(), new StringBuilder().append("%").append(fromType).append("%'[s] ").append(property).toString()});
     }
-    
+
     public static <T> String toString(T[] array)
     {
         return toString(array, ',');
     }
-    
+
     public static <T> String toString(T[] array, char separator)
     {
         return toString(array, separator, true);
     }
-    
+
     public static <T> String toString(T[] array, char separator, boolean spaces)
     {
         String SEPARATOR = spaces ? " " : "";
@@ -67,7 +67,7 @@ public class Collect {
             b = new StringBuilder().append(b).append(separator).append(SEPARATOR).toString();
         }
     }
-    
+
     public static String getPaths(Collection<String> list)
     {
         StringBuilder builder = new StringBuilder();
@@ -75,7 +75,7 @@ public class Collect {
             builder.append(s).append(".");
         return builder.toString().substring(0, builder.length() - 1);
     }
-    
+
     @SuppressWarnings("resource")
     public static String textPart(InputStream is)
     {
@@ -104,7 +104,7 @@ public class Collect {
             else s.close();
         }
     }
-    
+
     private static ArrayList<File> getListFiles(File root, FilenameFilter filter, ArrayList<File> toAdd)
     {
         for (File f : root.listFiles(filter))
@@ -114,17 +114,17 @@ public class Collect {
         }
         return toAdd;
     }
-    
+
     @SuppressWarnings({"unchecked", "rawtypes"})
     public static File[] getFiles(File root, FilenameFilter filter)
     {
         ArrayList files = getListFiles(root, filter, new ArrayList());
         return (File[]) files.toArray(new File[files.size()]);
     }
-    
+
     public static File[] getFiles(File root)
     {
         return getFiles(root, null);
     }
-    
+
 }

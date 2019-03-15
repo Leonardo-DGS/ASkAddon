@@ -5,8 +5,8 @@ import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.Kleenean;
 import org.bukkit.event.Event;
+import org.eclipse.jdt.annotation.Nullable;
 
-import javax.annotation.Nullable;
 import java.io.File;
 
 public class EffDeleteFile extends Effect {

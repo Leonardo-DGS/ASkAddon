@@ -5,8 +5,7 @@ import ch.njol.skript.lang.SkriptEvent;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerVelocityEvent;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EvtPlayerVelocity extends SkriptEvent {
 

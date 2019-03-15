@@ -5,8 +5,7 @@ import ch.njol.skript.lang.SkriptEvent;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EvtPlayerSwapHandItem extends SkriptEvent {
 

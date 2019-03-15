@@ -7,8 +7,7 @@ import ch.njol.util.Kleenean;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EffSetCursorItem extends Effect {
 

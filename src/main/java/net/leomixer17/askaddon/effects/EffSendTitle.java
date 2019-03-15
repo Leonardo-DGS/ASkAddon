@@ -8,8 +8,7 @@ import ch.njol.util.Kleenean;
 import net.leomixer17.askaddon.utils.TitleAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EffSendTitle extends Effect {
 

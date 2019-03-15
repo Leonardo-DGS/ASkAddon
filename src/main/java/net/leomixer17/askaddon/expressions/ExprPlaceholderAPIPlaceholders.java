@@ -7,8 +7,7 @@ import ch.njol.util.Kleenean;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class ExprPlaceholderAPIPlaceholders extends SimpleExpression<String> {
 

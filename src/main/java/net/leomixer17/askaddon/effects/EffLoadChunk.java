@@ -8,8 +8,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.event.Event;
 import org.bukkit.event.world.ChunkLoadEvent;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EffLoadChunk extends Effect {
 

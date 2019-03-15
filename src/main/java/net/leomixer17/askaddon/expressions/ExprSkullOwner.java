@@ -10,8 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class ExprSkullOwner extends SimpleExpression<String> {
 
@@ -48,7 +47,7 @@ public class ExprSkullOwner extends SimpleExpression<String> {
     @Nullable
     protected String[] get(Event e)
     {
-        if (this.skull.getSingle(e).getType().equals(Material.SKULL_ITEM))
+        if (this.skull.getSingle(e).getType().equals(Material.PLAYER_HEAD))
             return new String[]{((SkullMeta) this.skull.getSingle(e).getItemMeta()).getOwner()};
         return null;
     }

@@ -6,8 +6,7 @@ import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.Kleenean;
 import net.leomixer17.askaddon.ASkAddon;
 import org.bukkit.event.Event;
-
-import javax.annotation.Nullable;
+import org.eclipse.jdt.annotation.Nullable;
 
 public class EffDeleteObjectInRam extends Effect {
 

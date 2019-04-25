@@ -4,7 +4,7 @@ import ch.njol.skript.lang.Effect;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser;
 import ch.njol.util.Kleenean;
-import net.leomixer17.pluginlib.util.Players;
+import net.leomixer17.askaddon.utils.TitleAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.eclipse.jdt.annotation.Nullable;
@@ -38,7 +38,7 @@ public class EffSendActionBar extends Effect {
     protected void execute(Event e)
     {
         for (Player player : this.player.getAll(e))
-            Players.sendActionBar(player, this.text.getSingle(e));
+            TitleAPI.sendActionBar(player, this.text.getSingle(e));
     }
 
 }

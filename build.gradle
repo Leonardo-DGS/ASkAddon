@@ -1,9 +1,13 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
 
 group = 'net.leomixer17'
 version = '1.2.0-SNAPSHOT'
+description = 'An addon for Skript'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -15,8 +19,8 @@ repositories {
     mavenCentral()
 
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
-    maven { url = 'https://jitpack.io' }
     maven { url = 'http://repo.extendedclip.com/content/repositories/placeholderapi/' }
+    maven { url = 'https://jitpack.io' }
 }
 
 dependencies {
@@ -24,16 +28,26 @@ dependencies {
     compileOnly 'com.github.SkriptLang:Skript:2.3.6'
     compileOnly 'me.clip:placeholderapi:2.9.2'
     compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '1.1.0'
+    compile 'com.github.Leomixer17.PluginLib:bukkit:-SNAPSHOT'
 }
 
 processResources {
     filter ReplaceTokens, tokens: [
-            "version": project.property("version")
+            "version": project.property("version"),
+            "description": project.property("description")
     ]
 }
 
-jar {
-    archiveName 'ASkAddon.jar'
+tasks.jar.enabled = false
+
+tasks.shadowJar {
+    archiveFileName = 'ASkAddon.jar'
+    minimize()
+    relocate 'net.leomixer17.pluginlib', 'net.leomixer17.askaddon'
+}
+
+artifacts {
+    archives shadowJar
 }
 
 configurations.all {

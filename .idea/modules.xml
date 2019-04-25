@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ASkAddon.iml" filepath="$PROJECT_DIR$/.idea/modules/ASkAddon.iml" group="ASkAddon" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ASkAddon_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ASkAddon_main.iml" group="ASkAddon" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ASkAddon_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ASkAddon_test.iml" group="ASkAddon" />
+    </modules>
+  </component>
+</project>

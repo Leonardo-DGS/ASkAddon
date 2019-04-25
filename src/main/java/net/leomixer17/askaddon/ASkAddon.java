@@ -81,7 +81,7 @@ public final class ASkAddon extends JavaPlugin {
         registerEffect(EffSetClickedItem.class, "set clicked item to %itemstack%");
 
         // Expressions
-        registerExpression(ExprInventoryName.class, String.class, ExpressionType.SIMPLE, new String[]{"(name of inventory|inventory's name)", "name of[ inventory] %inventory%"});
+        registerExpression(ExprInventoryTitle.class, String.class, ExpressionType.SIMPLE, new String[]{"((name|title) of inventory [view]|inventory [view]'s (name|title))", "(name|title) of [inventory [view]] %inventory%"});
         registerExpression(ExprJsonMessage.class, JSONMessage.class, ExpressionType.SIMPLE, "json[ message][ (of|from)] %string%");
         registerExpression(ExprJsonMessageCommand.class, JSONMessage.class, ExpressionType.SIMPLE, new String[]{"%jsonmessage% suggest %string%", "%jsonmessage% run %string%"});
         registerExpression(ExprJsonMessageURL.class, JSONMessage.class, ExpressionType.SIMPLE, "%jsonmessage% open[ url] %string%");

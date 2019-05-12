@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
-public class Collect {
+public final class Collect {
 
     public static String[] toStringArray(Object[] array)
     {

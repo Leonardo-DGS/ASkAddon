@@ -33,8 +33,7 @@ public class EffUnloadChunk extends Effect {
     {
         final ChunkUnloadEvent event = new ChunkUnloadEvent(this.chunk.getSingle(e));
         Bukkit.getPluginManager().callEvent(event);
-        if (!event.isCancelled())
-            this.chunk.getSingle(e).unload(true);
+        this.chunk.getSingle(e).unload(true);
     }
 
 }

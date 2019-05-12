@@ -5,7 +5,7 @@ import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.util.Timespan;
 import ch.njol.util.Kleenean;
-import net.leomixer17.askaddon.utils.TitleAPI;
+import net.leomixer17.pluginlib.util.Players;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.eclipse.jdt.annotation.Nullable;
@@ -54,11 +54,11 @@ public class EffSendTitle extends Effect {
         for (final Player p : this.Player.getAll(event))
         {
             if (this.Title != null && this.subTitle != null)
-                TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), this.subTitle.getSingle(event));
+                Players.sendTitle(fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), this.subTitle.getSingle(event), p);
             else if (this.Title != null)
-                TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), null);
+                Players.sendTitle(fadeInTicks, timeTicks, fadeOutTicks, this.Title.getSingle(event), null, p);
             else if (this.subTitle != null)
-                TitleAPI.sendTitle(p, fadeInTicks, timeTicks, fadeOutTicks, null, this.subTitle.getSingle(event));
+                Players.sendTitle(fadeInTicks, timeTicks, fadeOutTicks, null, this.subTitle.getSingle(event), p);
         }
     }
 

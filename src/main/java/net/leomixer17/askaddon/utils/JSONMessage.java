@@ -1,6 +1,7 @@
 package net.leomixer17.askaddon.utils;
 
 import com.google.gson.stream.JsonWriter;
+import net.leomixer17.pluginlib.reflect.BukkitReflection;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -16,11 +17,11 @@ public class JSONMessage {
     private final List<MessagePart> messageParts;
     private String jsonString;
     private boolean dirty;
-    private Class<?> nmsTagCompound = Reflection.nmsClass("NBTTagCompound");
+    private Class<?> nmsTagCompound = BukkitReflection.getNMSClass("NBTTagCompound");
     //private Class<?> nmsAchievement = Reflection.nmsClass("Achievement");
-    private Class<?> nmsItemStack = Reflection.nmsClass("ItemStack");
+    private Class<?> nmsItemStack = BukkitReflection.getNMSClass("ItemStack");
     //private Class<?> obcStatistic = Reflection.obcClass("CraftStatistic");
-    private Class<?> obcItemStack = Reflection.obcClass("inventory.CraftItemStack");
+    private Class<?> obcItemStack = BukkitReflection.getNMSClass("inventory.CraftItemStack");
 
     public JSONMessage(String firstPartText)
     {
@@ -105,12 +106,12 @@ public class JSONMessage {
     {
         try
         {
-            Object nmsItem = Reflection.getMethod(this.obcItemStack, "asNMSCopy", new Class[]{
+            Object nmsItem = BukkitReflection.getDeclaredMethod(this.obcItemStack, "asNMSCopy", new Class[]{
                     ItemStack.class
             }).invoke(null, new Object[]{
                     itemStack
             });
-            return itemTooltip(Reflection.getMethod(this.nmsItemStack, "save", new Class[0]).invoke(nmsItem, new Object[]{
+            return itemTooltip(BukkitReflection.getDeclaredMethod(this.nmsItemStack, "save", new Class[0]).invoke(nmsItem, new Object[]{
                     this.nmsTagCompound.newInstance()
             }).toString());
         }
@@ -177,10 +178,10 @@ public class JSONMessage {
         {
             try
             {
-                final Object packet = TitleAPI.getNMSClass("PacketPlayOutChat").getConstructor(TitleAPI.getNMSClass("IChatBaseComponent")).newInstance(TitleAPI.getNMSClass(nmsClass).getMethod("a", String.class).invoke(null, toJSONString()));
+                final Object packet = BukkitReflection.getNMSClass("PacketPlayOutChat").getConstructor(BukkitReflection.getNMSClass("IChatBaseComponent")).newInstance(BukkitReflection.getNMSClass(nmsClass).getMethod("a", String.class).invoke(null, toJSONString()));
                 final Object handle = p.getClass().getMethod("getHandle").invoke(p);
                 final Object playerConnection = handle.getClass().getField("playerConnection").get(handle);
-                playerConnection.getClass().getMethod("sendPacket", TitleAPI.getNMSClass("Packet")).invoke(playerConnection, packet);
+                playerConnection.getClass().getMethod("sendPacket", BukkitReflection.getNMSClass("Packet")).invoke(playerConnection, packet);
             }
             catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | InstantiationException | NoSuchFieldException ex)
             {

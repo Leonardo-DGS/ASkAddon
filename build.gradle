@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.14-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.14.2-R0.1-SNAPSHOT'
     compileOnly 'com.github.SkriptLang:Skript:2.3.6'
     compileOnly 'me.clip:placeholderapi:2.9.2'
     compileOnly group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.2.200'

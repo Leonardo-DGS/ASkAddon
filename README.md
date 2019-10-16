@@ -1,6 +1,6 @@
 # Project abandoned
 I've decided to discontinue the development of this plugin because I'm no longer interested in making Skript additions, and I want to dedicate in development of other type of plugins.\
-I recommend using [Skellet](https://www.spigotmc.org/resources/skript-java-addon-skellett.34361/) in replacement, which also has a lot of features: I prefer to help in the Skellet's development rather than making an addon with only two or three features more than it.
+I recommend using [Skellett](https://www.spigotmc.org/resources/skript-java-addon-skellett.34361/) in replacement, which also has a lot of features: I prefer to help in the Skellett's development rather than making an addon with only two or three features more than it.
 
 # ASkAddon
 An addon for Skript plugin for Bukkit/Spigot
